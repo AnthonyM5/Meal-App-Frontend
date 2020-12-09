@@ -17,7 +17,7 @@ function manageMeals (state = [], action) {
       }
       return [...state, meal]
 
-    case 'DELETE_meal':
+    case 'DELETE_MEAL':
       return state.filter(meal => meal.id !== action.id)
 
     default:

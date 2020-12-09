@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import UserInput from '../components/UserInput'
+import Meals from '../components/Meals/Meals';
+ 
 
 
 class UserContainer extends Component {
@@ -7,7 +10,8 @@ class UserContainer extends Component {
     render() {
       return (
         <div>
-          Something goes here
+          <UserInput addMeal={this.props.addMeal} />
+          <Meals meals={this.props.meals} deleteMeal={this.props.deleteMeal} />
         </div>
       )
     }
@@ -26,3 +30,5 @@ class UserContainer extends Component {
   
   
   export default connect(mapStateToProps, mapDispatchToProps)(UserContainer);
+
+  // export default UserContainer
