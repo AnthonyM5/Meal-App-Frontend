@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UsersContainer from './containers/UserContainer';
+import FileReader from './components/FileReader'
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
@@ -9,6 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <UsersContainer />
+        <FileReader />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1>

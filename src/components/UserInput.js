@@ -20,9 +20,22 @@ class UserInput extends Component {
           text: ''
         });
       }
+
+      // handleFile = (e) => {
+      //   const content = e.target.result;
+      //   console.log('file content',  content)
+      //   // You can set content in state and show it in render.
+      // }
+      
+      // handleChangeFile = (file) => {
+      //   let fileData = new FileReader();
+      //   fileData.onloadend = handleFile;
+      //   fileData.readAsText(file);
+      // }
     
       render() {
         return (
+          
           <div>
             <form onSubmit={(event) => this.handleOnSubmit(event)}>
               <input 
@@ -34,7 +47,18 @@ class UserInput extends Component {
             </form>
           </div>
         );
-      };  
+      }; 
+       
+      // render(){
+      //   return(
+      //      <div>
+      //         <input type="file" accept=".txt" onChange={e => 
+      //             handleChangeFile(e.target.files[0])} /> 
+      //      </div>
+      //   )
+      // }
+
+
 };
 
 

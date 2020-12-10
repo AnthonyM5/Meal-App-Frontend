@@ -4,7 +4,7 @@ class Meal extends Component {
 
 
     render() {
-      const { meal, deletemeal } = this.props;
+      const { meal } = this.props;
       console.log(this.props)
       return (
         <div>
