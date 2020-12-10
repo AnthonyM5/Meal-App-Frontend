@@ -6,9 +6,10 @@ class Prediction{
     async Prediction(){
     const mobilenet = require('@tensorflow-models/mobilenet');
     const img = document.getElementById('img');
-    console.log(img)    
+    
     const model =  await mobilenet.load();
     const predictions =  await model.classify(img);
+    console.log(predictions)
     }
 }
 
