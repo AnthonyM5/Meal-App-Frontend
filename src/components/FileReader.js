@@ -17,17 +17,19 @@ class FileReader extends Component {
 
   handlePrediction = () => {
     let prediction = new Prediction()
-    prediction.Prediction()
+    prediction.NewPrediction()
+    .then(predictions =>  this.setState({
+      prediction: predictions}))
   }
 
 
   render() {
+    console.log(this.state.prediction)
     return(
       <div className="files">
         <ReactFileReader handleFiles={this.handleFiles}>
           <button className='btn'>Upload</button>
         </ReactFileReader>
-
         <p>Predictions</p>
         <img src={this.state.url} id="img" alt={this.state.file.name}/>
         <button 

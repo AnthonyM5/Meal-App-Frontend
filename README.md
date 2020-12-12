@@ -2,6 +2,25 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## User Stories:
+- Users can create/delete accounts
+- Users can create/delete their own recipes/meals (format should be uniform with RapidAPI) 
+(Authentification needed to verify user access to the correct paths)
+- Users can import a recipe from another website (see below)
+- Users have access to food database to search for nutritional value of individual items
+- Users can compile nutritional data for the recipes they chose (see below)
+- Users can search for recipes based on an image they upload (accuracy depends on mobilenet)
+- Users will have access to a grocery list component of all their ingredients (debating on including portions)from selected meals/recipes. 
+- Users can also compile a nutrient list component of all the ingredients on selected meals/recipes.
+
+## Beta Functionality (Not Tested)
+- Users can save meals and recipes they find or have an HTML link to => (Rapid API to parse ingredients from recipe??)
+- Users can upload a picture of a meal or something they ate and use image recognition AI to help classify (Mobilenet, may need to preprocess images)
+- Ingredients from recipes can be mapped to items in the food database => (typesense + user input to save pairings).  If ingredient has exactly one match in the database it can be automatically added to user's meal - otherwise user can select from options.
+Alternatively user will have to manually recreate their recipe by searching from food database.  
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:

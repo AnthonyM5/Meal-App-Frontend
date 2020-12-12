@@ -4,6 +4,7 @@ import FileReader from './components/FileReader'
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
+import Prediction from './components/Prediction';
 
 class App extends Component {
   render(){
