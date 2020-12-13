@@ -4,7 +4,8 @@ import Prediction from './Prediction'
 
 class FileReader extends Component {
   state = {
-    file : ""
+    file : "",
+    prediction: ""
   }
 
   handleFiles = files => {
