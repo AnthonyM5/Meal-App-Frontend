@@ -25,7 +25,7 @@ class FileReader extends Component {
 
 
   render() {
-    console.log(this.state.prediction)
+    
     return(
       <div className="files">
         <ReactFileReader handleFiles={this.handleFiles}>
@@ -36,6 +36,7 @@ class FileReader extends Component {
         <button 
         onClick={this.handlePrediction}
         >Predict</button>
+        <p>{this.state.prediction ? this.state.prediction[0].className : null}</p>
       </div>
     )
   }

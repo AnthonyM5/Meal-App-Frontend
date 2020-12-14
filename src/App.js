@@ -6,6 +6,7 @@ import logo from './logo.svg';
 import './App.css';
 import Prediction from './components/Prediction';
 import { setFoods } from './redux/actionCreator'
+import FoodCards from './containers/FoodCards';
 
 class App extends Component {
 
@@ -18,6 +19,7 @@ class App extends Component {
       <div className="App">
         <UsersContainer />
         <FileReader />
+        <FoodCards />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1>
