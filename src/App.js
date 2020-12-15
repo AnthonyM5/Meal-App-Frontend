@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import UsersContainer from './containers/UserContainer';
-import FileReader from './components/FileReader'
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
 import Prediction from './components/Prediction';
-import { setFoods } from './redux/actionCreator'
 import FoodCards from './containers/FoodCards';
 import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
-
-  componentDidMount(){
-    this.props.setFoods()
-  }
 
   render(){
     return (
@@ -25,10 +19,11 @@ class App extends Component {
           </h1>
           <Switch>
           <Route path="/foods" component={FoodCards} />
+          <Route path="/uploads" component={UsersContainer}/>
           </Switch>
-        <UsersContainer />
-        <FileReader />
-        <FoodCards /> 
+        {/* <UsersContainer />
+        <FileReader /> */}
+        {/* <FoodCards />  */}
           {/* <a
             className="App-link"
             href="https://reactjs.org"
@@ -57,4 +52,4 @@ class App extends Component {
 
   
   
-  export default connect(mapStateToProps, { setFoods })(App);
+  export default connect(mapStateToProps)(App);

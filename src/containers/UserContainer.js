@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import UserInput from '../components/UserInput'
+import FileReader from '../components/FileReader'
 import Meals from '../components/Meals/Meals';
  
 
@@ -12,6 +13,7 @@ class UserContainer extends Component {
         <div>
           <UserInput addMeal={this.props.addMeal} />
           <Meals meals={this.props.meals} deleteMeal={this.props.deleteMeal} />
+          <FileReader />
         </div>
       )
     }
