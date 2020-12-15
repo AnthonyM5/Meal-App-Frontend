@@ -4,10 +4,10 @@ import FoodCard from '../components/FoodCard'
 
 
 const FoodCards = (props) => {
-    console.log(props.foods)
+    // console.log(props.foods.map(food => console.log(food.name)))
     return(
     <div className="cards">
-      
+      {props.food ? props.foods.map(food => <FoodCard key={food.id} {...food} />) : null }
     </div>
     )
   }

@@ -3,10 +3,10 @@ import React from 'react'
 const FoodCard = (props) => {
     const { food } = props
   
-    // console.log(id)
+    console.log(props)
     return (
       <div className="card">
-          {food.name}
+          {/* {food.name} */}
       </div>
     )
 }

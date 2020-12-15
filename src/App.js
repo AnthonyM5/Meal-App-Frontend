@@ -7,6 +7,7 @@ import './App.css';
 import Prediction from './components/Prediction';
 import { setFoods } from './redux/actionCreator'
 import FoodCards from './containers/FoodCards';
+import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
 
@@ -17,14 +18,17 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <UsersContainer />
-        <FileReader />
-        <FoodCards />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1>
             Food Nutrient Calculator
           </h1>
+          <Switch>
+          <Route path="/foods" component={FoodCards} />
+          </Switch>
+        <UsersContainer />
+        <FileReader />
+        <FoodCards /> 
           {/* <a
             className="App-link"
             href="https://reactjs.org"
