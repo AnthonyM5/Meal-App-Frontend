@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { compose } from 'redux'
+// import { compose } from 'redux'
 import FoodCard from '../components/FoodCard'
 
 
-const FoodCards = (state) => {
+const FoodCards = (props) => {
   // componentDidUpdate (){
   //   console.log(this.state.foods)
   // }
@@ -13,10 +13,11 @@ const FoodCards = (state) => {
     // for (const [name, value] of Object.entries(state.foods)) {
     //   console.log(`${JSON.stringify(name)}:`)
     // }
-    console.log(typeof state.foods)
+    console.log(props.foods)
     return (
       <div className="cards">
         <h1>Food Card</h1>
+        {props.foods.map(food => <FoodCard key={food.id} {...food}/> )}
       </div>
     )
 
