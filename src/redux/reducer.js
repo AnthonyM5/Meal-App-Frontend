@@ -1,5 +1,6 @@
 import cuid from 'cuid'
 import { combineReducers } from 'redux'
+import foodsReducer from './foodsReducer'
 
 const rootReducer = combineReducers({
   meals: manageMeals,
@@ -38,16 +39,6 @@ function manageMeals (state = [], action) {
 //     default:
 //       return state
 //   }
-
-  function foodsReducer(state = [], action) {
-    switch(action.type){
-      case 'SET_FOODS':
-        
-        return {...state, foods: action.payload}
-      default:
-        return [...state]
-    }
-  }
 
 
 

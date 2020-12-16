@@ -1,28 +1,29 @@
-// import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
+import { compose } from 'redux'
 import FoodCard from '../components/FoodCard'
 
 
-const FoodCards = (props) => {
+const FoodCards = (state) => {
   // componentDidUpdate (){
-  //   this.props.setFoods()
+  //   console.log(this.state.foods)
   // }
     // console.log(this.props.foods)
      
-    // for (const [name, value] of Object.entries(props.foods)) {
-    //   console.log(`${JSON.stringify(name)}: ${JSON.stringify(value)}`)
+    // for (const [name, value] of Object.entries(state.foods)) {
+    //   console.log(`${JSON.stringify(name)}:`)
     // }
+    console.log(typeof state.foods)
     return (
-      <div className="card">
+      <div className="cards">
         <h1>Food Card</h1>
-        {/* {props.foods.map(food => <FoodCard key={food.id}/> )} */}
       </div>
     )
 
 }
 
 const msp = (state) => ({
-  foods: state.foods
+  foods: state.foods.foods
 })
   
   
