@@ -1,29 +1,29 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setFoods } from '../redux/actionCreator' 
 import FoodCard from '../components/FoodCard'
 
 
-class FoodCards extends Component  {
-  componentDidMount (){
-    this.props.setFoods()
-  }
-
-  render(){
-    console.log(this.props.foods)
+const FoodCards = (props) => {
+  // componentDidUpdate (){
+  //   this.props.setFoods()
+  // }
+    // console.log(this.props.foods)
+     
+    // for (const [name, value] of Object.entries(props.foods)) {
+    //   console.log(`${JSON.stringify(name)}: ${JSON.stringify(value)}`)
+    // }
     return (
-      <div><p>Food Cards</p></div>
+      <div className="card">
+        <h1>Food Card</h1>
+        {/* {props.foods.map(food => <FoodCard key={food.id}/> )} */}
+      </div>
     )
-  }
-
 
 }
 
-
-
 const msp = (state) => ({
-  foods: state.foods.foods
+  foods: state.foods
 })
   
   
-  export default connect(msp, { setFoods } )(FoodCards)
+  export default connect(msp)(FoodCards)

@@ -3,11 +3,16 @@ import UsersContainer from './containers/UserContainer';
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
+import { setFoods } from './redux/actionCreator' 
 import Prediction from './components/Prediction';
 import FoodCards from './containers/FoodCards';
 import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
+
+  componentDidMount(){
+    this.props.setFoods()
+  }
 
   render(){
     return (
@@ -52,4 +57,4 @@ class App extends Component {
 
   
   
-  export default connect(mapStateToProps)(App);
+  export default connect(mapStateToProps, { setFoods })(App);

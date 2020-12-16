@@ -45,7 +45,7 @@ function manageMeals (state = [], action) {
         
         return {...state, foods: action.payload}
       default:
-        return {...state}
+        return [...state]
     }
   }
 
