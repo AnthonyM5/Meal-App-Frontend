@@ -22,4 +22,4 @@ export const setSelectedFood = (id) => {
   }
 }
 
-export const unsetRestaurant = () => ({type: "UNSET_RESTAURANT"})
+export const unsetFood = () => ({type: "UNSET_FOOD"})

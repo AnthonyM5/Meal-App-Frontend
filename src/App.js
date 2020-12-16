@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
 import { setFoods } from './redux/actionCreator' 
-// import FoodPage from './components/FoodPage'
+import FoodPage from './components/Food/FoodPage'
 import FoodCards from './containers/FoodCards';
 import { Switch, Route } from 'react-router-dom'
 
@@ -24,7 +24,7 @@ class App extends Component {
           </h1>
           <Switch>
           <Route path="/foods" component={FoodCards} />
-          {/* <Route path="/foods/:id" component={FoodPage}/> */}
+          <Route path="/foods/:id" component={FoodPage}/>
           <Route path="/uploads" component={UsersContainer}/>
           </Switch>
         {/* <UsersContainer />
