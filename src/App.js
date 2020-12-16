@@ -1,21 +1,35 @@
 import React, { Component } from 'react';
 import UsersContainer from './containers/UserContainer';
-import FileReader from './components/FileReader'
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
+import { setFoods } from './redux/actionCreator' 
+import FoodPage from './components/Food/FoodPage'
+import FoodCards from './containers/FoodCards';
+import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
+
+  componentDidMount(){
+    this.props.setFoods()
+  }
+
   render(){
     return (
       <div className="App">
-        <UsersContainer />
-        <FileReader />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1>
             Food Nutrient Calculator
           </h1>
+          <Switch>
+          <Route path="/foods" component={FoodCards} />
+          <Route path="/foods/:id" component={FoodPage}/>
+          <Route path="/uploads" component={UsersContainer}/>
+          </Switch>
+        {/* <UsersContainer />
+        <FileReader /> */}
+        {/* <FoodCards />  */}
           {/* <a
             className="App-link"
             href="https://reactjs.org"
@@ -31,15 +45,17 @@ class App extends Component {
   }
  
 
-  const mapStateToProps = (state) => ({ reviews: state.reviews})
+  const mapStateToProps = (state) => ({ foods: state.foods})
   
-  const mapDispatchToProps = (dispatch) => {
-    return{
-        deleteReview: (id) => dispatch({ type: 'DELETE_REVIEW', id}),
-        addReview: (review) => dispatch({ type: 'ADD_REVIEW', review})
-      }
-  }
+  // const mapDispatchToProps = (dispatch) => {
+  //   return{
+  //       deleteReview: (id) => dispatch({ type: 'DELETE_REVIEW', id}),
+  //       addMeal: (name) => dispatch({type: "ADD_MEAL", name}),
+  //       setFoods: (foods) => dispatch({type: "SET_FOODS", foods}),
+  //       addReview: (review) => dispatch({ type: 'ADD_REVIEW', review})
+  //     }
+  // }
 
   
   
-  export default connect(mapStateToProps, mapDispatchToProps)(App);
+  export default connect(mapStateToProps, { setFoods })(App);
