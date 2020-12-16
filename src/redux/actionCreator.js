@@ -12,7 +12,6 @@ export const setFoods = () => {
 }
 
 export const setSelectedFood = (id) => {
-  console.log('start')
   return dispatch => {
     fetch(API + "/foods/" + id)
     .then(res => res.json())

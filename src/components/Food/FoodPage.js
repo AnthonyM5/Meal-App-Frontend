@@ -16,10 +16,11 @@ componentWillUnmount(){
 
 
 render(){
-    console.log(this.props)
+    const { name, id, calories } = this.props
     return(
-        <div>
-            
+        <div className="card">
+            <p id={id}>{name}</p>
+            <p>Calories: {calories}</p>
         </div>
         )
     }
