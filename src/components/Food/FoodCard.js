@@ -1,12 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const FoodCard = (props) => {
     const {id, name} = props
-    console.log(name)
+    // console.log(id)
     return (
       
       <div className="card">
-        {name}
+        <p><Link to={`/foods/${id}`}>{name}</Link></p>
       </div>
     )
 }

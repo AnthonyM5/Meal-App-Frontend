@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 // import { compose } from 'redux'
-import FoodCard from '../components/FoodCard'
+import FoodCard from '../components/Food/FoodCard'
+// import { Link } from 'react-router-dom'
+
 
 
 const FoodCards = (props) => {
