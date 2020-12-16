@@ -13,10 +13,9 @@ const FoodCards = (props) => {
     // for (const [name, value] of Object.entries(state.foods)) {
     //   console.log(`${JSON.stringify(name)}:`)
     // }
-    console.log(props.foods)
+    // console.log(props.foods)
     return (
       <div className="cards">
-        <h1>Food Card</h1>
         {props.foods.map(food => <FoodCard key={food.id} {...food}/> )}
       </div>
     )
