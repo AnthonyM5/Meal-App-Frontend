@@ -5,8 +5,8 @@ import { setSelectedFood, unsetFood } from '../../redux/actionCreator'
 class FoodPage extends Component {
 
 componentDidMount(){
-    const id = this.props.match.pareams.id
-    console.log(id)
+    const id = this.props.match.params.id
+    // console.log(id)
     this.props.setSelectedFood(id)
 }
 
@@ -16,10 +16,10 @@ componentWillUnmount(){
 
 
 render(){
-
+    console.log(this.props)
     return(
         <div>
-
+            
         </div>
         )
     }

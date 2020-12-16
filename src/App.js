@@ -23,8 +23,8 @@ class App extends Component {
             Food Nutrient Calculator
           </h1>
           <Switch>
-          <Route path="/foods" component={FoodCards} />
           <Route path="/foods/:id" component={FoodPage}/>
+          <Route path="/foods" component={FoodCards} />
           <Route path="/uploads" component={UsersContainer}/>
           </Switch>
         {/* <UsersContainer />
