@@ -1,10 +1,12 @@
 import cuid from 'cuid'
 import { combineReducers } from 'redux'
 import foodsReducer from './foodsReducer'
+import userReducer from './usersReducer'
 
 const rootReducer = combineReducers({
   meals: manageMeals,
-  foods: foodsReducer
+  foods: foodsReducer,
+  users: userReducer
 })
 export default rootReducer
 
