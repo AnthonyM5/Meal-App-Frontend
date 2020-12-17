@@ -4,7 +4,7 @@ import { toggleSignup } from '../redux/actionCreator'
 
 const Login = (props) => {
     const { signup, toggleSignup } = props
-    console.log(signup)
+    
 
     return(
       <>

@@ -15,11 +15,15 @@ const FoodCards = (props) => {
     // for (const [name, value] of Object.entries(state.foods)) {
     //   console.log(`${JSON.stringify(name)}:`)
     // }
-    // console.log(props.foods)
+    // console.log(props)
+    const { history } = props
     return (
+      <>
+      <button onClick={history.goBack}>Go Back!</button>
       <div className="cards">
         {props.foods.map(food => <FoodCard key={food.id} {...food}/> )}
       </div>
+      </>
     )
 
 }
