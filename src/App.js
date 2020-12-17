@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
 import { setFoods } from './redux/actionCreator' 
-import { Link } from 'react-router-dom'
+import Login from './components/Login'
+// import { Link } from 'react-router-dom'
 import FoodPage from './components/Food/FoodPage'
 import FoodCards from './containers/FoodCards';
 import { Switch, Route } from 'react-router-dom'
@@ -16,21 +17,18 @@ class App extends Component {
   }
 
   render(){
+    console.log(this.props)
     return (
       <div className="App">
         <header className="App-header">
-        <h1>
-            Food Nutrient Calculator
-          </h1>
+        <h1>Food Nutrient Calculator</h1>
         <img src={logo} className="App-logo" alt="logo" />
-        <Link to={"/foods"}>Foods</Link>
-        <Link to={"/uploads"}>Predict my Meal</Link>
         </header>
-        <Switch>
+        {this.props.users.id ? <Login />: <Switch>
           <Route path="/foods/:id" component={FoodPage}/>
           <Route path="/foods" component={FoodCards} />
           <Route path="/uploads" component={FileReader}/>
-          </Switch>
+        </Switch>}
         
       </div>
     );
@@ -38,7 +36,7 @@ class App extends Component {
   }
  
 
-  const mapStateToProps = (state) => ({ foods: state.foods})
+  const mapStateToProps = (state) => ({ foods: state.foods, users: state.users})
   
   // const mapDispatchToProps = (dispatch) => {
   //   return{
