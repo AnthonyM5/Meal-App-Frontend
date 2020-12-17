@@ -17,18 +17,18 @@ class App extends Component {
   }
 
   render(){
-    console.log(this.props)
+    console.log(this.props.users.signup)
     return (
       <div className="App">
         <header className="App-header">
         <h1>Food Nutrient Calculator</h1>
         <img src={logo} className="App-logo" alt="logo" />
         </header>
-        {this.props.users.id ? <Login />: <Switch>
+        {this.props.users.signup ? <Switch>
           <Route path="/foods/:id" component={FoodPage}/>
           <Route path="/foods" component={FoodCards} />
           <Route path="/uploads" component={FileReader}/>
-        </Switch>}
+        </Switch> : <Login />}
         
       </div>
     );

@@ -21,5 +21,6 @@ export const setSelectedFood = (id) => {
     }))
   }
 }
+export const toggleSignup = () => ({type: "TOGGLE_SIGNUP"})
 
 export const unsetFood = () => ({type: "UNSET_FOOD"})

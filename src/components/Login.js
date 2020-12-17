@@ -1,8 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { toggleSignup } from '../redux/actionCreator'
 
 const Login = (props) => {
     const { signup, toggleSignup } = props
+    console.log(signup)
+
     return(
       <>
         <h3>{signup ? "Sign up!" : "Login!"} </h3>
@@ -32,4 +35,6 @@ const Login = (props) => {
     )
   }
 
-  export default connect()(Login)
+  const mapStateToProps = (state) => ({signup: state.users.signup})
+
+  export default connect(mapStateToProps, { toggleSignup })(Login)
