@@ -19,28 +19,19 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1>
+        <h1>
             Food Nutrient Calculator
           </h1>
-          <Link to={"/foods"}>Foods</Link>
-          <Switch>
+        <img src={logo} className="App-logo" alt="logo" />
+        <Link to={"/foods"}>Foods</Link>
+        <Link to={"/uploads"}>Predict my Meal</Link>
+        </header>
+        <Switch>
           <Route path="/foods/:id" component={FoodPage}/>
           <Route path="/foods" component={FoodCards} />
           <Route path="/uploads" component={UsersContainer}/>
           </Switch>
-        {/* <UsersContainer />
-        <FileReader /> */}
-        {/* <FoodCards />  */}
-          {/* <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a> */}
-        </header>
+        
       </div>
     );
   }

@@ -16,11 +16,12 @@ componentWillUnmount(){
 
 
 render(){
-    const { name, id, calories } = this.props
+    const { name, id, calories, history } = this.props
     return(
         <div className="card">
             <p id={id}>{name}</p>
             <p>Calories: {calories}</p>
+            <button onClick={ history.goBack }>Go back!</button>
         </div>
         )
     }

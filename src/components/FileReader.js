@@ -25,7 +25,9 @@ class FileReader extends Component {
 
 
   render() {
-    
+    // const img = document.getElementById('img').src
+    // const toggle = img ?? 
+    console.log(this.state)
     return(
       <div className="files">
         <ReactFileReader handleFiles={this.handleFiles}>
@@ -33,10 +35,10 @@ class FileReader extends Component {
         </ReactFileReader>
         <p>Predictions</p>
         <img src={this.state.url} id="img" alt={this.state.file.name}/>
-        <button 
-        onClick={this.handlePrediction}
-        >Predict</button>
+        <p>{this.state.url ? <button onClick={this.handlePrediction}>Predict</button> : null}</p>
         <p>{this.state.prediction ? this.state.prediction[0].className : null}</p>
+        
+        
       </div>
     )
   }
