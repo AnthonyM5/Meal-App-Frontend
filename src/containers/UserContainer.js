@@ -7,13 +7,14 @@ import Meals from '../components/Meals/Meals';
 
 
 class UserContainer extends Component {
-
+    
     render() {
+      console.log(this.props)
       return (
         <div>
           <UserInput addMeal={this.props.addMeal} />
           <Meals meals={this.props.meals} deleteMeal={this.props.deleteMeal} />
-          <FileReader />
+          <FileReader/>
         </div>
       )
     }

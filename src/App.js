@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UsersContainer from './containers/UserContainer';
+import FileReader from './components/FileReader';
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
@@ -29,7 +29,7 @@ class App extends Component {
         <Switch>
           <Route path="/foods/:id" component={FoodPage}/>
           <Route path="/foods" component={FoodCards} />
-          <Route path="/uploads" component={UsersContainer}/>
+          <Route path="/uploads" component={FileReader}/>
           </Switch>
         
       </div>

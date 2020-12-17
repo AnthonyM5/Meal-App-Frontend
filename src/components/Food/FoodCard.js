@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const FoodCard = (props) => {
     const {id, name} = props
-    // console.log(id)
+    // console.log(props)
     return (
       
       <div className="card">
