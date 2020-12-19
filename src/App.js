@@ -23,13 +23,15 @@ class App extends Component {
         <header className="App-header">
         <h1>Food Nutrient Calculator</h1>
         <img src={logo} className="App-logo" alt="logo" />
+        <Login />
         </header>
-       
-        {this.props.users.id ? <Switch>
+        
+         <Switch>
           <Route path="/foods/:id" component={FoodPage}/>
           <Route path="/foods" component={FoodCards} />
           <Route path="/uploads" component={FileReader}/>
-        </Switch> : <Login />}
+        </Switch> 
+       
       </div>
     );
   }

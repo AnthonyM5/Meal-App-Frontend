@@ -22,5 +22,10 @@ export const setSelectedFood = (id) => {
   }
 }
 export const toggleSignup = () => ({type: "TOGGLE_SIGNUP"})
+export const handleLogin = (e) => ({
+  type: "LOGIN_FORM",
+  payload: {name: e.target.name, value: e.target.value}
+})
 
 export const unsetFood = () => ({type: "UNSET_FOOD"})
+

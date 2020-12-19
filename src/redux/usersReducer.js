@@ -5,8 +5,8 @@ const loginForm ={
 }
 
 const initialState = {
-    id: null,
-    username: null,
+    id: "",
+    username: "",
     signup: false,
     loginForm: loginForm
   }
@@ -15,6 +15,14 @@ const initialState = {
     switch (action.type){
       case "TOGGLE_SIGNUP":
         return {...state, signup: !state.signup}
+      case "LOGIN_FORM":
+        // console.log(action.payload)
+        return {...state, loginForm: {
+          ...state.loginForm, [action.payload.name]: action.payload.value
+        }}
+        
+      case "LOGOUT":
+        return {...state, username: "", id: ""}
       default:
         return {...state}
     }
