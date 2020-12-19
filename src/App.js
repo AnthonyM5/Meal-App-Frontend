@@ -5,10 +5,10 @@ import logo from './logo.svg';
 import './App.css';
 import { setFoods } from './redux/actionCreator' 
 import Login from './components/Login'
-import { Link } from 'react-router-dom'
 import FoodPage from './components/Food/FoodPage'
 import FoodCards from './containers/FoodCards';
 import { Switch, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class App extends Component {
 
@@ -21,17 +21,18 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-        <h1>Food Nutrient Calculator</h1>
         <img src={logo} className="App-logo" alt="logo" />
+        <h1>Food Nutrient Calculator</h1>
+        <Link to={"/foods"}>Foods</Link>
         <Login />
         </header>
+        
         
          <Switch>
           <Route path="/foods/:id" component={FoodPage}/>
           <Route path="/foods" component={FoodCards} />
           <Route path="/uploads" component={FileReader}/>
         </Switch> 
-       
       </div>
     );
   }

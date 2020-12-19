@@ -8,7 +8,7 @@ const initialState = {
     id: "",
     username: "",
     signup: false,
-    loginForm: loginForm
+    form: loginForm
   }
   
   const userReducer = (state=initialState, action) => {
@@ -16,11 +16,11 @@ const initialState = {
       case "TOGGLE_SIGNUP":
         return {...state, signup: !state.signup}
       case "LOGIN_FORM":
-        // console.log(action.payload)
-        return {...state, loginForm: {
-          ...state.loginForm, [action.payload.name]: action.payload.value
+        console.log(action.payload)
+        return { ...state, form: {
+          ...state.form,
+          [action.payload.name]: action.payload.value
         }}
-        
       case "LOGOUT":
         return {...state, username: "", id: ""}
       default:
