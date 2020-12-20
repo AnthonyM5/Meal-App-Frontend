@@ -3,7 +3,7 @@ import FileReader from './components/FileReader';
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
-import { setFoods } from './redux/actionCreator' 
+import { setFoods, autoLogin } from './redux/actionCreator' 
 import Login from './components/Login'
 import FoodPage from './components/Food/FoodPage'
 import FoodCards from './containers/FoodCards';
@@ -13,11 +13,11 @@ import { Link } from 'react-router-dom'
 class App extends Component {
 
   componentDidMount(){
+    localStorage && this.props.autoLogin()
     this.props.setFoods()
   }
 
   render(){
-    // console.log(this.props.users.signup)
     return (
       <div className="App">
         <header className="App-header">
@@ -54,4 +54,4 @@ class App extends Component {
 
   
   
-  export default connect(mapStateToProps, { setFoods })(App);
+  export default connect(mapStateToProps, { setFoods, autoLogin })(App);

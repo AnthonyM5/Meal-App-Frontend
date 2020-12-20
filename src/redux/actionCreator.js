@@ -68,6 +68,27 @@ export const loginForm = (data) => {
   }
 }
 
+export const autoLogin = () => {
+  
+  return dispatch => {
+    console.log(localStorage.token)
+    fetch(API + "/autologin", {
+      method: 'POST', 
+      headers: {
+        'Authorization': localStorage.token,
+      },
+    })
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .then(res => {
+      dispatch({
+      type: "SET_USER",
+      payload: {user: res.user}
+    })
+  })
+  }
+}
+
 
 
 export const unsetFood = () => ({type: "UNSET_FOOD"})
