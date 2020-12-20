@@ -79,16 +79,16 @@ export const autoLogin = () => {
       },
     })
     .then(res => res.json())
-    .then(res => console.log(res))
     .then(res => {
       dispatch({
-      type: "SET_USER",
-      payload: {user: res.user}
-    })
+        type: "SET_USER",
+        payload: {user: res.user}
+      })
   })
   }
 }
 
+export const logout = () => ({type: "LOGOUT"})
 
 
 export const unsetFood = () => ({type: "UNSET_FOOD"})

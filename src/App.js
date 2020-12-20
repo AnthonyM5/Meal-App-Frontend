@@ -3,7 +3,7 @@ import FileReader from './components/FileReader';
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
-import { setFoods, autoLogin } from './redux/actionCreator' 
+import { setFoods, autoLogin, logout } from './redux/actionCreator' 
 import Login from './components/Login'
 import FoodPage from './components/Food/FoodPage'
 import FoodCards from './containers/FoodCards';
@@ -23,8 +23,11 @@ class App extends Component {
         <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Food Nutrient Calculator</h1>
-        {this.props.users.id ?  
-        <Link to={"/foods"}>Foods</Link> : <Login />}
+        {this.props.users.id ?  <>
+        <Link to={"/foods"}>Foods</Link>
+        <Link to={"/uploads"}>Guess your recipe</Link>
+        <p><button onClick={this.props.logout}>Logout!</button>  </p>
+        </>: <Login />}
         
         </header>
         <Switch>
@@ -54,4 +57,4 @@ class App extends Component {
 
   
   
-  export default connect(mapStateToProps, { setFoods, autoLogin })(App);
+  export default connect(mapStateToProps, { setFoods, autoLogin, logout })(App);

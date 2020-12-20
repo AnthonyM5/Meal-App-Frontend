@@ -24,6 +24,7 @@ const initialState = {
         console.log(action.payload)
         return {...state, ...action.payload.user}
       case "LOGOUT":
+        console.log("logged")
         return {...state, username: "", id: ""}
       default:
         return {...state}
