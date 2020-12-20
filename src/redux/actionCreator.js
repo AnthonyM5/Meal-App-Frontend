@@ -24,20 +24,23 @@ export const setSelectedFood = (id) => {
 export const handleLogin = (e) => ({type: "LOGIN_FORM", payload: {name: e.target.name, value: e.target.value}})
 export const toggleSignup = () => ({type: "TOGGLE_SIGNUP"})
 
-
-// export const handleLogin = (e) => 
-// ({
-//   type: "LOGIN_FORM",
-//   payload: {name: e.target.name, value: e.target.value}
-// })
-
-// export const handleLogin = (e) => {
-//   console.log(e.target.value)
-//   return ({
-//     type: "LOGIN_FORM",
-//     payload: {name: e.target.name, value: e.target.value}
-//   })
-// }
+export const signUpForm = (data) => {
+  return dispatch => {
+    fetch(API + "/users", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(res => res.json())
+    .then(res => dispatch({
+      type: "CREATE_USER",
+      payload: {user: res.user}
+    }))
+    
+  }
+}
 
 
 

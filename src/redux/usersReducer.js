@@ -16,7 +16,6 @@ const initialState = {
       case "TOGGLE_SIGNUP":
         return {...state, signup: !state.signup}
       case "LOGIN_FORM":
-        console.log(action.payload)
         return { ...state, form: {
           ...state.form,
           [action.payload.name]: action.payload.value
