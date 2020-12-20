@@ -34,9 +34,11 @@ export const signUpForm = (data) => {
       body: JSON.stringify(data),
     })
     .then(res => res.json())
-    .then(res => {dispatch({
+    .then(res => {
+      localStorage.token = res.token
+      dispatch({
       type: "SET_USER",
-      payload: {user: res}
+      payload: {user: res.user}
     })}
     )
     
@@ -54,9 +56,11 @@ export const loginForm = (data) => {
     })
     .then(res => res.json())
     .then(res => {
+      localStorage.token = res.token
       dispatch({
+        
         type: "SET_USER",
-        payload: {user: res}
+        payload: {user: res.user}
       })
     })
   
