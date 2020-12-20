@@ -21,6 +21,7 @@ const initialState = {
           [action.payload.name]: action.payload.value
         }}
       case "SET_USER":
+        console.log(action.payload)
         return {...state, ...action.payload.user}
       case "LOGOUT":
         return {...state, username: "", id: ""}

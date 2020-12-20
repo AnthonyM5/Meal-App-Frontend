@@ -23,16 +23,18 @@ class App extends Component {
         <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Food Nutrient Calculator</h1>
-        <Link to={"/foods"}>Foods</Link>
-        <Login />
+        {this.props.users.id ?  
+        <Link to={"/foods"}>Foods</Link> : <Login />}
+        
         </header>
-        
-        
-         <Switch>
+        <Switch>
           <Route path="/foods/:id" component={FoodPage}/>
           <Route path="/foods" component={FoodCards} />
           <Route path="/uploads" component={FileReader}/>
-        </Switch> 
+        </Switch>
+        
+        
+        
       </div>
     );
   }

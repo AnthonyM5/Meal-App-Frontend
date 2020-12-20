@@ -34,10 +34,11 @@ export const signUpForm = (data) => {
       body: JSON.stringify(data),
     })
     .then(res => res.json())
-    .then(res => dispatch({
+    .then(res => {dispatch({
       type: "SET_USER",
-      payload: {user: res.user}
-    }))
+      payload: {user: res}
+    })}
+    )
     
   }
 }
@@ -52,10 +53,13 @@ export const loginForm = (data) => {
       body: JSON.stringify(data),
     })
     .then(res => res.json())
-    .then(res => dispatch({
-      type: "SET_USER",
-      payload: {user: res.user}
-    }))
+    .then(res => {
+      dispatch({
+        type: "SET_USER",
+        payload: {user: res}
+      })
+    })
+  
     
   }
 }

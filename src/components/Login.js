@@ -15,7 +15,6 @@ const Login = (props) => {
           alert("Those passwords don't match!")
         }
       } else {
-        console.log('signup')
         loginForm({username: username, password: password})
       }
     }
