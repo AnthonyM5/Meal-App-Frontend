@@ -35,7 +35,25 @@ export const signUpForm = (data) => {
     })
     .then(res => res.json())
     .then(res => dispatch({
-      type: "CREATE_USER",
+      type: "SET_USER",
+      payload: {user: res.user}
+    }))
+    
+  }
+}
+
+export const loginForm = (data) => {
+  return dispatch => {
+    fetch(API + "/login", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(res => res.json())
+    .then(res => dispatch({
+      type: "SET_USER",
       payload: {user: res.user}
     }))
     

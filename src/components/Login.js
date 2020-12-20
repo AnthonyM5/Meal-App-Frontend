@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { toggleSignup, handleLogin, signUpForm} from '../redux/actionCreator'
+import { toggleSignup, handleLogin, signUpForm, loginForm} from '../redux/actionCreator'
 
 const Login = (props) => {
-    const { signup, toggleSignup, handleLogin, signUpForm, form } = props
+    const { signup, toggleSignup, handleLogin, signUpForm, loginForm, form } = props
     const { username, password, passwordConfirmation } = form
 
     const onSubmit = (e) => {
@@ -15,11 +15,11 @@ const Login = (props) => {
           alert("Those passwords don't match!")
         }
       } else {
-        console.log({username: username, password: password})
+        console.log('signup')
+        loginForm({username: username, password: password})
       }
     }
 
-    // console.log(props.form)
     return(
       
       <>
@@ -32,6 +32,7 @@ const Login = (props) => {
           <label>
             Password:
             <input type="password" name="password"  value={password} onChange={handleLogin}/>
+            <input type="submit" value="Submit" />
           </label><br/>
           {signup &&
             <>
@@ -56,4 +57,4 @@ const Login = (props) => {
     form: state.users.form
   })
 
-  export default connect(mapStateToProps, { toggleSignup, handleLogin, signUpForm} )(Login)
+  export default connect(mapStateToProps, { toggleSignup, handleLogin, signUpForm, loginForm} )(Login)

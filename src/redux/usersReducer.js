@@ -20,6 +20,8 @@ const initialState = {
           ...state.form,
           [action.payload.name]: action.payload.value
         }}
+      case "SET_USER":
+        return {...state, ...action.payload.user}
       case "LOGOUT":
         return {...state, username: "", id: ""}
       default:
