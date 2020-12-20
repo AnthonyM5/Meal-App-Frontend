@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createMeal } from '../redux/actionCreator'
 
 
 class UserInput extends Component {
@@ -15,7 +17,9 @@ class UserInput extends Component {
       
       handleOnSubmit(event) {
         event.preventDefault();
-        this.props.addMeal(this.state.text);
+        // this.props.addMeal(this.state.text);
+        this.props.createMeal({name: this.state.text})
+        console.log(this.state)
         this.setState({
           text: ''
         });
@@ -63,4 +67,4 @@ class UserInput extends Component {
 
 
 
-export default UserInput
+export default connect(null, {createMeal})(UserInput)

@@ -45,6 +45,26 @@ export const signUpForm = (data) => {
   }
 }
 
+export const createMeal = (data) => {
+  return dispatch => {
+    fetch(API + "/meals", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(res => res.json())
+    .then(res => {
+      dispatch({
+      type: "ADD_MEAL",
+      payload: {meal: res.name}
+    })}
+    )
+    
+  }
+}
+
 export const loginForm = (data) => {
   return dispatch => {
     fetch(API + "/login", {

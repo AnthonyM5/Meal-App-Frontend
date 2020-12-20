@@ -17,7 +17,7 @@ function manageMeals (state = [], action) {
     case 'ADD_MEAL':
       let meal = {
         id: cuid(),
-        text: action.meal
+        text: action.payload.meal
       }
       console.log(action)
       return [...state, meal]

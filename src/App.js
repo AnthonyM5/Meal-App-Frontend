@@ -9,6 +9,8 @@ import FoodPage from './components/Food/FoodPage'
 import FoodCards from './containers/FoodCards';
 import { Switch, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import UserContainer from './containers/UserContainer';
+import { compose } from 'redux';
 
 class App extends Component {
 
@@ -26,6 +28,9 @@ class App extends Component {
         {this.props.users.id ?  <>
         <Link to={"/foods"}>Foods</Link>
         <Link to={"/uploads"}>Guess your recipe</Link>
+        <br>
+        </br>
+        <UserContainer/>
         <p><button onClick={this.props.logout}>Logout!</button>  </p>
         </>: <Login />}
         

@@ -9,7 +9,8 @@ class Meal extends Component {
       return (
         <div>
           <li>
-            {meal.text}
+            <p>{meal.text}</p>
+            <p>{meal.id}</p> 
             <button onClick={(e) => this.props.deleteMeal(this.props.meal.id)}> X </button>
           </li>
         </div>
