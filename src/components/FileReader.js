@@ -29,6 +29,7 @@ class FileReader extends Component {
     // const img = document.getElementById('img').src
     // const toggle = img ?? 
     const { history } = this.props
+    console.log(this.props)
     return(
       <div className="files">
         <ReactFileReader handleFiles={this.handleFiles}>

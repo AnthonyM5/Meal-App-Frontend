@@ -5,7 +5,8 @@ import { createMeal } from '../redux/actionCreator'
 
 class UserInput extends Component {
     state = {
-        text: ""
+        text: "",
+        user: this.props.user
       }
     
       handleOnChange = (e) => {
@@ -18,8 +19,11 @@ class UserInput extends Component {
       handleOnSubmit(event) {
         event.preventDefault();
         // this.props.addMeal(this.state.text);
-        this.props.createMeal({name: this.state.text})
-        console.log(this.state)
+        this.props.createMeal({
+          name: this.state.text,
+          user: this.props.user
+        })
+        // console.log(this.state)
         this.setState({
           text: ''
         });
@@ -38,6 +42,7 @@ class UserInput extends Component {
       // }
     
       render() {
+        console.log(this.state)
         return (
           
           <div>

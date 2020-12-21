@@ -10,10 +10,9 @@ import { createMeal } from '../redux/actionCreator'
 class UserContainer extends Component {
     
     render() {
-      console.log(this.props)
       return (
         <div>
-          <UserInput createMeal={this.props.createMeal} addMeal={this.props.addMeal}/>
+          <UserInput user={this.props.users} createMeal={this.props.createMeal} addMeal={this.props.addMeal}/>
           <Meals meals={this.props.meals} deleteMeal={this.props.deleteMeal} />
           {/* <FileReader/> */}
         </div>
@@ -22,13 +21,16 @@ class UserContainer extends Component {
   }
   
   
-  const mapStateToProps = (state) => ({ meals: state.meals})
+  const mapStateToProps = (state) => ({ 
+    meals: state.meals,
+    users: state.users.username
+  })
   
   const mapDispatchToProps = (dispatch) => {
     return{
         addMeal: (meal) => dispatch({ type: 'ADD_MEAL', meal}),
         deleteMeal: (id) => dispatch({ type: 'DELETE_MEAL', id}),
-        createMeal: (meal) => createMeal(meal)
+        createMeal: (meal, id) => createMeal(meal, id)
       }
   }
 

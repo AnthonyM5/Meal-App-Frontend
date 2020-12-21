@@ -56,9 +56,10 @@ export const createMeal = (data) => {
     })
     .then(res => res.json())
     .then(res => {
+      console.log(res)
       dispatch({
       type: "ADD_MEAL",
-      payload: {meal: res.name}
+      payload: { meal: res.name, user: res.user}
     })}
     )
     
@@ -91,7 +92,6 @@ export const loginForm = (data) => {
 export const autoLogin = () => {
   
   return dispatch => {
-    console.log(localStorage.token)
     fetch(API + "/autologin", {
       method: 'POST', 
       headers: {
