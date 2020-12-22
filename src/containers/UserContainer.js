@@ -8,6 +8,10 @@ import { createMeal } from '../redux/actionCreator'
 
 
 class UserContainer extends Component {
+
+  componentDidMount() {
+   this.props.fetchMeal() 
+  }
     
     render() {
       return (
@@ -23,11 +27,13 @@ class UserContainer extends Component {
   
   const mapStateToProps = (state) => ({ 
     meals: state.meals,
-    users: state.users.username
+    users: state.users.id,
+    username: state.users.username
   })
   
   const mapDispatchToProps = (dispatch) => {
     return{
+        fetchMeal: () => dispatch({type: "SET_MEALS" }),
         addMeal: (meal) => dispatch({ type: 'ADD_MEAL', meal}),
         deleteMeal: (id) => dispatch({ type: 'DELETE_MEAL', id}),
         createMeal: (meal, id) => createMeal(meal, id)

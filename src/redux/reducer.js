@@ -13,7 +13,8 @@ export default rootReducer
 function manageMeals (state = [], action) {
 
   switch (action.type) {
-    
+    case 'SET_MEALS':
+      return [...state]
     case 'ADD_MEAL':
       let meal = {
         id: cuid(),

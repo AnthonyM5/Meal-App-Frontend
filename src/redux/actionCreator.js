@@ -11,6 +11,17 @@ export const setFoods = () => {
   )}
 }
 
+export const setMeals = () => {
+  return dispatch => {
+    fetch(API + "/meals")
+    .then(res => res.json())
+    .then(foods => dispatch({
+      type: "SET_MEALS",
+      payload: foods
+    })
+  )}
+}
+
 export const setSelectedFood = (id) => {
   return dispatch => {
     fetch(API + "/foods/" + id)
@@ -46,6 +57,7 @@ export const signUpForm = (data) => {
 }
 
 export const createMeal = (data) => {
+  console.log(data)
   return dispatch => {
     fetch(API + "/meals", {
       method: "POST",
@@ -65,6 +77,7 @@ export const createMeal = (data) => {
     
   }
 }
+
 
 export const loginForm = (data) => {
   return dispatch => {
