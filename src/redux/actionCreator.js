@@ -68,7 +68,7 @@ export const createMeal = (data) => {
     })
     .then(res => res.json())
     .then(res => {
-      console.log(res)
+      // console.log(res) - Check to see if data is called properly in payload
       dispatch({
       type: "ADD_MEAL",
       payload: { meal: res.name, user: res.user}
@@ -91,6 +91,7 @@ export const loginForm = (data) => {
     .then(res => res.json())
     .then(res => {
       localStorage.token = res.token
+      console.log(res)
       dispatch({
         
         type: "SET_USER",

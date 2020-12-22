@@ -21,10 +21,10 @@ const initialState = {
           [action.payload.name]: action.payload.value
         }}
       case "SET_USER":
-        // console.log(action.payload)
+        // console.log(action.payload) - Checking to see if User data is passed properly
         return {...state, ...action.payload.user}
       case "LOGOUT":
-        console.log("logged")
+        console.log("logged out")
         return {...state, username: "", id: ""}
       default:
         return {...state}

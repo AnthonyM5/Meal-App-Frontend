@@ -7,7 +7,7 @@ import { setFoods, setMeals, autoLogin, logout } from './redux/actionCreator'
 import Login from './components/Login'
 import FoodPage from './components/Food/FoodPage'
 import FoodCards from './containers/FoodCards';
-import Meals from './components/Meals/Meals';
+import MealsPage from './components/Meals/Meals';
 import Meal from './components/Meals/Meal';
 import { Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -30,17 +30,17 @@ class App extends Component {
         <h1>Food Nutrient Calculator</h1>
         {this.props.users.id ?  <>
         <Link to={"/foods"}>Foods</Link>
+        <Link to={"/meals"}>Meals</Link>
         <Link to={"/uploads"}>Guess your recipe</Link>
         <br>
         </br>
-        <UserContainer/>
         <p><button onClick={this.props.logout}>Logout!</button>  </p>
         </>: <Login />}
         
         </header>
         <Switch>
           <Route path="/meals/:id" component={Meal} />
-          <Route path="meals" component={Meals} />
+          <Route path="/meals" component={MealsPage} />
           <Route path="/foods/:id" component={FoodPage}/>
           <Route path="/foods" component={FoodCards} />
           <Route path="/uploads" component={FileReader}/>
