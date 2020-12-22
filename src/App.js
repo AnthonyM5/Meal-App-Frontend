@@ -40,7 +40,7 @@ class App extends Component {
         </header>
         <Switch>
           <Route path="/meals/:id" component={Meal} />
-          <Route path="/meals" component={MealsPage} />
+          <Route path="/meals" component={UserContainer} />
           <Route path="/foods/:id" component={FoodPage}/>
           <Route path="/foods" component={FoodCards} />
           <Route path="/uploads" component={FileReader}/>

@@ -9,16 +9,18 @@ import { createMeal } from '../redux/actionCreator'
 
 class UserContainer extends Component {
 
-  componentDidMount() {
-   console.log(this.props)
-  }
+  // componentDidMount() {
+   
+  // }
     
     render() {
+      const { history } = this.props
       return (
         <div>
+          <button onClick={history.goBack}>Go Back!</button>
           <UserInput user={this.props.users} createMeal={this.props.createMeal} addMeal={this.props.addMeal}/>
           <Meals meals={this.props.meals} deleteMeal={this.props.deleteMeal} />
-          {/* <FileReader/> */}
+          
         </div>
       )
     }
