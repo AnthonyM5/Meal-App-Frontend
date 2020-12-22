@@ -14,7 +14,9 @@ function manageMeals (state = [], action) {
 
   switch (action.type) {
     case 'SET_MEALS':
-      return [...state]
+      console.log('start')
+      let meals = action.payload
+      return {...state.meals ,meals}
     case 'ADD_MEAL':
       let meal = {
         id: cuid(),

@@ -15,9 +15,9 @@ export const setMeals = () => {
   return dispatch => {
     fetch(API + "/meals")
     .then(res => res.json())
-    .then(foods => dispatch({
+    .then(meals => dispatch({
       type: "SET_MEALS",
-      payload: foods
+      payload: meals
     })
   )}
 }
