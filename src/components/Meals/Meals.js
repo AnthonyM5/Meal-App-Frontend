@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import Meal from '../Meals/Meal'
 
-class Meals extends Component {
-  render() {
+const Meals = (props) => {
+    console.log(props)
     return(
-      <ul>
-        {this.props.meals.map(meal => {
-          return <Meal key={meal.id} meal={meal} deleteMeal={this.props.deleteMeal} />
-        })}
-      </ul>
+      <>
+      <div className="cards">
+        {props.meals.map(meal => <Meal key={meal.id} {...meal}/> )}
+        {/* <button onClick={history.goBack}>Go Back!</button> */}
+      </div>
+      </>
     );
   }
-};
 
-export default Meals;
+
+const msp = (state) => ({
+  meals: state.meals.meals
+})
+
+export default connect(msp)(Meals);
 

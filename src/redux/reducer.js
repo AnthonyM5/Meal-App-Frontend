@@ -10,13 +10,12 @@ const rootReducer = combineReducers({
 })
 export default rootReducer
 
-function manageMeals (state = [], action) {
+function manageMeals (state = {meals: []}, action) {
 
   switch (action.type) {
     case 'SET_MEALS':
-      console.log('start')
       let meals = action.payload
-      return {...state.meals ,meals}
+      return {...state, meals}
     case 'ADD_MEAL':
       let meal = {
         id: cuid(),

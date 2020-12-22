@@ -7,8 +7,10 @@ import { setFoods, setMeals, autoLogin, logout } from './redux/actionCreator'
 import Login from './components/Login'
 import FoodPage from './components/Food/FoodPage'
 import FoodCards from './containers/FoodCards';
-import { Switch, Route } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import Meals from './components/Meals/Meals';
+import Meal from './components/Meals/Meal';
+import { Switch, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import UserContainer from './containers/UserContainer';
 import { compose } from 'redux';
 
@@ -37,6 +39,8 @@ class App extends Component {
         
         </header>
         <Switch>
+          <Route path="/meals/:id" component={Meal} />
+          <Route path="meals" component={Meals} />
           <Route path="/foods/:id" component={FoodPage}/>
           <Route path="/foods" component={FoodCards} />
           <Route path="/uploads" component={FileReader}/>
@@ -50,7 +54,7 @@ class App extends Component {
   }
  
 
-  const mapStateToProps = (state) => ({ foods: state.foods, users: state.users})
+  const mapStateToProps = (state) => ({ foods: state.foods, users: state.users, meals: state.meals})
   
   // const mapDispatchToProps = (dispatch) => {
   //   return{

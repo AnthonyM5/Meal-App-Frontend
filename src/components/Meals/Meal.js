@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-class Meal extends Component {
+const Meal = (props) => {
+  const {id, name} = props
+  // console.log(props)
+  return (
+    
+    <div className="card">
+      <p><Link to={`/meals/${id}`}>{name}</Link></p>
+    </div>
+  )
+}
 
-
-    render() {
-      const { meal } = this.props;
-      console.log(this.props)
-      return (
-        <div>
-          <li>
-            <p>{meal.text}</p>
-            <p>{meal.id}</p> 
-            <button onClick={(e) => this.props.deleteMeal(this.props.meal.id)}> X </button>
-          </li>
-        </div>
-      );
-    }
-  };
-  
-  export default Meal;
+export default Meal

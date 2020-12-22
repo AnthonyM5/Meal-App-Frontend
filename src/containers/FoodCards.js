@@ -17,6 +17,7 @@ const FoodCards = (props) => {
     // }
     // console.log(props)
     const { history } = props
+    console.log(props)
     return (
       <>
       <button onClick={history.goBack}>Go Back!</button>
