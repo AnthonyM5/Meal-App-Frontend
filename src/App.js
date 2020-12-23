@@ -7,7 +7,7 @@ import { setFoods, setMeals, autoLogin, logout } from './redux/actionCreator'
 import Login from './components/Login'
 import FoodPage from './components/Food/FoodPage'
 import FoodCards from './containers/FoodCards';
-import MealsPage from './components/Meals/Meals';
+import MealsPage from './components/Meals/MealPage';
 import Meal from './components/Meals/Meal';
 import { Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -39,7 +39,7 @@ class App extends Component {
         
         </header>
         <Switch>
-          <Route path="/meals/:id" component={Meal} />
+          <Route path="/meals/:id" component={MealsPage} />
           <Route path="/meals" component={UserContainer} />
           <Route path="/foods/:id" component={FoodPage}/>
           <Route path="/foods" component={FoodCards} />
