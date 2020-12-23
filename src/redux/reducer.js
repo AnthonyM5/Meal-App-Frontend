@@ -1,7 +1,7 @@
-import cuid from 'cuid'
 import { combineReducers } from 'redux'
 import foodsReducer from './foodsReducer'
 import userReducer from './usersReducer'
+import manageMeals from './mealsReducer'
 
 const rootReducer = combineReducers({
   meals: manageMeals,
@@ -10,28 +10,7 @@ const rootReducer = combineReducers({
 })
 export default rootReducer
 
-function manageMeals (state = {meals: []}, action) {
 
-  switch (action.type) {
-    case 'SET_MEALS':
-      let meals = action.payload
-      return {...state, meals}
-    case 'ADD_MEAL':
-      let meal = {
-        id: cuid(),
-        user_id: action.payload.user,
-        text: action.payload.meal
-      }
-      console.log(action)
-      return {...state, meal}
-
-    case 'DELETE_MEAL':
-      return state.filter(meal => meal.id !== action.id)
-
-    default:
-      return state
-  }
-}
 
 // function manageReviews(state = [], action) {
 //   switch (action.type) {

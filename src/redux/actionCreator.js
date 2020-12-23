@@ -128,3 +128,4 @@ export const logout = () => ({type: "LOGOUT"})
 
 export const unsetFood = () => ({type: "UNSET_FOOD"})
 
+export const unsetMeal = () => ({type: "UNSET_MEAL"})
