@@ -68,10 +68,11 @@ export const createMeal = (data) => {
     })
     .then(res => res.json())
     .then(res => {
-      // console.log(res) - Check to see if data is called properly in payload
+      console.log(res) 
+      // Check to see if data is called properly in payload
       dispatch({
       type: "ADD_MEAL",
-      payload: { meal: res.name, user: res.user}
+      payload: { meal: res.name, user: res.user_id}
     })}
     )
     

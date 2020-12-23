@@ -23,7 +23,7 @@ function manageMeals (state = {meals: []}, action) {
         text: action.payload.meal
       }
       console.log(action)
-      return [...state, meal]
+      return {...state, meal}
 
     case 'DELETE_MEAL':
       return state.filter(meal => meal.id !== action.id)
