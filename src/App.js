@@ -19,7 +19,7 @@ class App extends Component {
   componentDidMount(){
     localStorage && this.props.autoLogin()
     this.props.setFoods()
-    this.props.setMeals()
+    // this.props.setMeals()
   }
 
   render(){

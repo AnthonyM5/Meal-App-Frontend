@@ -7,16 +7,20 @@ const nullObj = {
   
 const initialState = {
 meals: [],
-selectedFood: nullObj
+selectedMeal: nullObj
 }
 
   
 const manageMeals = (state=initialState, action) => {
     switch (action.type) {
       case 'SET_MEALS':
+          console.log(action.payload)
         let meals = action.payload
         return {...state, meals}
-      case "UNSET_MEAL":
+      case 'SET_SELECTED_MEAL':
+          console.log(action.payload)
+          return {...state, selectedMeal: action.payload }
+      case 'UNSET_MEAL':
         return {...state, selectedMeal:nullObj }
       case 'ADD_MEAL':
         let meal = {

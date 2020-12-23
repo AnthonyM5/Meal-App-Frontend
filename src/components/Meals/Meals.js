@@ -18,8 +18,8 @@ const Meals = (props) => {
   }
 
 
-const msp = (state) => ({
-  meals: state.meals.meals
-})
+const msp = (state) => (
+  {meals: state.meals.meals}
+)
 
 export default connect(msp)(Meals);

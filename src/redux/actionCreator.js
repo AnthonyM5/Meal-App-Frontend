@@ -32,6 +32,18 @@ export const setSelectedFood = (id) => {
     }))
   }
 }
+
+export const setSelectedMeal = (id) => {
+  return dispatch => {
+    fetch(API + "/meals/" + id)
+    .then(res => res.json())
+    .then(food => dispatch({
+      type: "SET_SELECTED_MEAL",
+      payload: food
+    }))
+  }
+}
+
 export const handleLogin = (e) => ({type: "LOGIN_FORM", payload: {name: e.target.name, value: e.target.value}})
 export const toggleSignup = () => ({type: "TOGGLE_SIGNUP"})
 

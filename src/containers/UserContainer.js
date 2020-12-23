@@ -3,17 +3,20 @@ import { connect } from 'react-redux';
 import UserInput from '../components/UserInput'
 // import FileReader from '../components/FileReader'
 import Meals from '../components/Meals/Meals';
-import { createMeal } from '../redux/actionCreator'
+import { createMeal, setMeals } from '../redux/actionCreator'
  
 
 
 class UserContainer extends Component {
 
-  // componentDidMount() {
-   
-  // }
+  componentDidMount() { 
+    this.props.setMeals()
+    console.log(this.props)
+  }
+
     
     render() {
+      
       const { history } = this.props
       return (
         <div>
@@ -43,6 +46,6 @@ class UserContainer extends Component {
 
   
   
-  export default connect(mapStateToProps, mapDispatchToProps)(UserContainer);
+  export default connect(mapStateToProps, {mapDispatchToProps, setMeals})(UserContainer);
 
   // export default UserContainer
