@@ -13,7 +13,12 @@ export const setFoods = () => {
 
 export const setMeals = () => {
   return dispatch => {
-    fetch(API + "/meals")
+    fetch(API + "/meals", {
+      headers: {
+        'Authorization': localStorage.token,
+      },
+    })
+    
     .then(res => res.json())
     .then(meals => dispatch({
       type: "SET_MEALS",

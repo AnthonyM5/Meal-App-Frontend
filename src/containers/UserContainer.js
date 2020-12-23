@@ -10,13 +10,13 @@ import { createMeal, setMeals } from '../redux/actionCreator'
 class UserContainer extends Component {
 
   componentDidMount() { 
+    console.log(this.props.user)
     this.props.setMeals()
-    console.log(this.props)
+    
   }
 
     
     render() {
-      
       const { history } = this.props
       return (
         <div>
