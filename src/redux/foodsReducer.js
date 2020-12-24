@@ -6,7 +6,12 @@ const nullObj = {
 
 const initialState = {
     foods: [],
-    selectedFood: nullObj
+    filtersForm: {
+      search: "",
+      filter: ""
+    },
+
+    selectedFood: nullObj,
   }
 
 const foodsReducer = (state=initialState, action) => {
@@ -15,6 +20,11 @@ const foodsReducer = (state=initialState, action) => {
           return {...state, foods: action.payload}
         case 'SET_SELECTED_FOOD':
             return {...state, selectedFood: action.payload }
+        case 'FILTERS_FORM_CHANGE':
+          return {...state, filtersForm: {
+            ...state.filtersForm,
+            [action.payload.name]: action.payload.value
+          }}
         case "UNSET_FOODS":
             return {...state, selectedFood: nullObj}
         default:

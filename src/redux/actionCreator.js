@@ -11,6 +11,8 @@ export const setFoods = () => {
   )}
 }
 
+
+
 export const setMeals = () => {
   return dispatch => {
     fetch(API + "/meals", {
@@ -51,6 +53,15 @@ export const setSelectedMeal = (id) => {
 
 export const handleLogin = (e) => ({type: "LOGIN_FORM", payload: {name: e.target.name, value: e.target.value}})
 export const toggleSignup = () => ({type: "TOGGLE_SIGNUP"})
+
+export const handleSearchForm = (e) => {
+  const target = e.target;
+  const value = target.type === 'checkbox' ? target.checked : target.value;
+  return ({
+    type: "FILTERS_FORM_CHANGE",
+    payload: {name: e.target.name, value: value}
+  })
+}
 
 export const signUpForm = (data) => {
   return dispatch => {
