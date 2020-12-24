@@ -13,11 +13,15 @@ import thunk from 'redux-thunk'
 import { BrowserRouter as Router } from 'react-router-dom'
 // We build this:
 import reducer  from './redux/reducer'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(reducer, compose(
   applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 )
+
+
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -29,7 +33,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
 
 
 // ReactDOM.render(

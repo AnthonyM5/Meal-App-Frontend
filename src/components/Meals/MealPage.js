@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setSelectedMeal, unsetMeal } from '../../redux/actionCreator'
-
+import { Card } from 'react-bootstrap'
 class MealPage extends Component {
 
 componentDidMount(){
@@ -16,11 +16,11 @@ componentWillUnmount(){
 
 
 render(){
-    console.log(this.props)
+    console.log(this.props)    
     const { name, id, user_id, history } = this.props
     return(
         <>
-        <div className="card">
+        <div className="card" class="card" style={{color: "red"}}>
             <p id={id}>{name}</p>
             <p>User: {user_id}</p>
             <button onClick={ history.goBack }>Go back!</button>

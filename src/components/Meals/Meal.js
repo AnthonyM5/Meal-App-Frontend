@@ -6,7 +6,7 @@ const Meal = (props) => {
   // console.log(props)
   return (
     
-    <div className="card">
+    <div className="card" style={{backgroundColor: "turquoise"}} >
       <p><Link to={`/meals/${id}`}>{name}</Link></p>
     </div>
   )
