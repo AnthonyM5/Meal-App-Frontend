@@ -17,15 +17,17 @@ const FoodCards = (props) => {
     //   console.log(`${JSON.stringify(name)}:`)
     // }
     // console.log(props)
+    const searchedFoods = props.foods.filter(food => {
+      return food.name.toLowerCase().includes(props.search.toLowerCase())
+    })
     const { history } = props
-    // console.log(props)
+    // console.log(searchedFoods)
     return (
-      
       <>
       <Filter />
       <button onClick={history.goBack}>Go Back!</button>
       <div className="cards">
-        {props.foods.map(food => <FoodCard key={food.id} {...food}/> )}
+        {searchedFoods.map(food => <FoodCard key={food.id} {...food}/> )}
       </div>
       </>
     )
@@ -33,7 +35,8 @@ const FoodCards = (props) => {
 }
 
 const msp = (state) => ({
-  foods: state.foods.foods
+  foods: state.foods.foods,
+  ...state.foods.filtersForm
 })
   
   

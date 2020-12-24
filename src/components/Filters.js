@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { handleSearchForm } from '../redux/actionCreator'
 
 const Filters = (props) => {
-    console.log(props)
+    // console.log(props)
   return(
     <form>
         <label>
