@@ -16,7 +16,7 @@ const FoodCards = (props) => {
     // for (const [name, value] of Object.entries(state.foods)) {
     //   console.log(`${JSON.stringify(name)}:`)
     // }
-    // console.log(props)
+    console.log(props)
     const searchedFoods = props.foods.filter(food => {
       return food.name.toLowerCase().includes(props.search.toLowerCase())
     })

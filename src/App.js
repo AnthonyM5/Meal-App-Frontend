@@ -8,16 +8,16 @@ import Login from './components/Login'
 import FoodPage from './components/Food/FoodPage'
 import FoodCards from './containers/FoodCards';
 import MealsPage from './components/Meals/MealPage';
-import Meal from './components/Meals/Meal';
+// import Meal from './components/Meals/Meal';
 import { Switch, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import UserContainer from './containers/UserContainer';
-import { compose } from 'redux';
+// import { compose } from 'redux';
 import {Navbar} from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
-import { Form } from 'react-bootstrap';
-import { FormControl } from 'react-bootstrap';
+// import { Form } from 'react-bootstrap';
+// import { FormControl } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
 
@@ -30,6 +30,7 @@ class App extends Component {
   }
 
   render(){
+    // console.log(useParams)
     return (
       <div className="App">
         {this.props.users.id ?     

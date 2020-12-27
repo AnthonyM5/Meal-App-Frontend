@@ -8,7 +8,7 @@ const FoodCard = (props) => {
     return (
       
       <div className="card" style={{backgroundColor: "turquoise"}}>
-        <h5 class="card-title"><Link to={`/foods/${id}`}>{name}</Link></h5>
+        <h5 className="card-title"><Link to={`/foods/${id}`}>{name}</Link></h5>
       </div>
     )
 }

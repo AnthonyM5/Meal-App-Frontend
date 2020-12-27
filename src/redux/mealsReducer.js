@@ -18,7 +18,7 @@ const manageMeals = (state=initialState, action) => {
         let meals = action.payload
         return {...state, meals}
       case 'SET_SELECTED_MEAL':
-          console.log(action.payload)
+          // console.log(action.payload)
           return {...state, selectedMeal: action.payload }
       case 'UNSET_MEAL':
         return {...state, selectedMeal:nullObj }
