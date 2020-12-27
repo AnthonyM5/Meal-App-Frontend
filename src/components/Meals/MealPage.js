@@ -19,14 +19,17 @@ componentWillUnmount(){
 render(){
     
     const { name, id, user_id, history, ingredients } = this.props
-    console.log(ingredients)
+    // console.log(ingredients)
     return(
         <>
         <div className="card" style={{color: "red"}}>
             <p id={id}>{name}</p>
             <p>User: {user_id}</p>
-            { ingredients ? ingredients.map(ingredient => <p>{ingredient.food_id}</p>) : null }
-            <Link to={`/foods`}>Add Ingredients</Link>
+            { ingredients ? ingredients.map(ingredient => <p key={ingredient.id}>Food ID: {ingredient.food_id}</p>) : null }
+            <Link to={{ 
+                pathname: `/foods`,
+                state: {id}
+            }}>Add Ingredients</Link>
             <button onClick={ history.goBack }>Go back!</button>
         </div>
         </>

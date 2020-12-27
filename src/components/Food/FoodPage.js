@@ -6,7 +6,6 @@ class FoodPage extends Component {
 
 componentDidMount(){
     const id = this.props.match.params.id
-    // console.log(id)
     this.props.setSelectedFood(id)
 }
 
@@ -16,7 +15,8 @@ componentWillUnmount(){
 
 
 render(){
-    const { name, id, calories, history } = this.props
+    const { name, id, calories, history, location } = this.props
+    console.log(location.state.mealId)
     return(
         <div className="card">
             <p id={id}>{name}</p>
