@@ -51,6 +51,20 @@ export const setSelectedMeal = (id) => {
   }
 }
 
+export const addToMeal = (data) => {
+    console.log(data)
+    return dispatch => {
+      fetch(API + "/meals/" + data.mealId, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      .then(res => res.json)
+    }
+}
+
 export const handleLogin = (e) => ({type: "LOGIN_FORM", payload: {name: e.target.name, value: e.target.value}})
 export const toggleSignup = () => ({type: "TOGGLE_SIGNUP"})
 
@@ -96,7 +110,7 @@ export const createMeal = (data) => {
     })
     .then(res => res.json())
     .then(res => {
-      console.log(res) 
+      // console.log(res) 
       // Check to see if data is called properly in payload
       dispatch({
       type: "ADD_MEAL",
