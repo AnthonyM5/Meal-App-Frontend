@@ -21,7 +21,9 @@ render(){
     // console.log(location.state.mealId)
     // console.log(lactose)
 
-    
+    const createingredient = () => {
+        this.props.addToMeal({id: id, mealId: location.state.mealId})
+    }
     // for (const key in this.props) {
     //     // console.log( `${key}: ${this.props[key]}`)
     //     const nutrient = `${this.props[key]}`
@@ -57,7 +59,7 @@ render(){
             <p>Calories: {calories}</p>
             <p>Carbs: {carbs}</p>
             <p>Water: {water}</p>
-            <button onClick={this.props.addToMeal({id: id, mealId: location.state.mealId})}> </button>
+            <button onClick={createingredient}>Add To Meal</button>
             <button onClick={ history.goBack }>Go back!</button>
         </div>
         )

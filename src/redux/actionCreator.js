@@ -54,10 +54,11 @@ export const setSelectedMeal = (id) => {
 export const addToMeal = (data) => {
     console.log(data)
     return dispatch => {
-      fetch(API + "/meals/" + data.mealId, {
+      fetch(API + "/meals/" + data.mealId +"/ingredients", {
         method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          'Authorization': localStorage.token,
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(data),
       })
