@@ -40,7 +40,7 @@ class App extends Component {
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link href="/foods">Foods</Nav.Link>
+                  {/* <Nav.Link href="/foods">Foods</Nav.Link> */}
                   <Nav.Link href="/meals">Meals</Nav.Link>
                   <Nav.Link href="/uploads">Image Guesser</Nav.Link>
                   <NavDropdown title="TensorFlow" id="basic-nav-dropdown">
