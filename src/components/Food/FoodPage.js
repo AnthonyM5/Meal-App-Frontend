@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router';
 import { setSelectedFood, unsetFood, addToMeal} from '../../redux/actionCreator'
 
 class FoodPage extends Component {
@@ -17,13 +18,18 @@ componentWillUnmount(){
 
 
 render(){
-    const { name, id, calories, history, location, carbs, water} = this.props
-    // console.log(location.state.mealId)
-    // console.log(lactose)
+    const { name, id, calories, history, location, carbs, water, redirect} = this.props
 
     const createingredient = () => {
-        this.props.addToMeal({id: id, mealId: location.state.mealId})
+        const API = "http://localhost:3000"
+        console.log(API + "/meals/" + `${location.state.mealId}`)
+        return ( <Redirect push to={
+            { pathname: API + "/meals/" + `${location.state.mealId}`
+            }
+        }/>)  
     }
+
+
     // for (const key in this.props) {
     //     // console.log( `${key}: ${this.props[key]}`)
     //     const nutrient = `${this.props[key]}`
@@ -49,9 +55,6 @@ render(){
     // }
 
     
-
-
-
     
     return(
         <div className="card">
