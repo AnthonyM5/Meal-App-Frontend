@@ -3,7 +3,14 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router';
 import { setSelectedFood, unsetFood, addToMeal} from '../../redux/actionCreator'
 
+
 class FoodPage extends Component {
+    
+    state = {
+        redirect: false
+    }
+
+
 
 componentDidMount(){
     const id = this.props.match.params.id
@@ -14,21 +21,41 @@ componentWillUnmount(){
     this.props.unsetFood()
   }
 
+createingredient = () => {
+    
+
+
+}
+
+renderRedirect = () => {
+    const API = "http://localhost:3000"
+    const mealId = this.props.location.state.mealId
+    if (this.state.redirect) {
+      return <Redirect to={
+        { pathname: "/meals/" + mealId
+        }
+    }/>
+    }
+  }
+
+handleClick = (e) => {
+    e.preventDefault()
+    
+    this.setState({
+        redirect: true
+    })   
+    // createingredient()
+
+}
+
 
 
 
 render(){
-    const { name, id, calories, history, location, carbs, water, redirect} = this.props
-
-    const createingredient = () => {
-        const API = "http://localhost:3000"
-        console.log(API + "/meals/" + `${location.state.mealId}`)
-        return ( <Redirect push to={
-            { pathname: API + "/meals/" + `${location.state.mealId}`
-            }
-        }/>)  
-    }
-
+    
+    const { name, id, calories, history, carbs, water} = this.props 
+    
+    
 
     // for (const key in this.props) {
     //     // console.log( `${key}: ${this.props[key]}`)
@@ -58,11 +85,12 @@ render(){
     
     return(
         <div className="card">
+            {this.renderRedirect()}
             <p id={id}>{name}</p>
             <p>Calories: {calories}</p>
             <p>Carbs: {carbs}</p>
             <p>Water: {water}</p>
-            <button onClick={createingredient}>Add To Meal</button>
+            <button onClick={this.handleClick}>Add To Meal</button>
             <button onClick={ history.goBack }>Go back!</button>
         </div>
         )
