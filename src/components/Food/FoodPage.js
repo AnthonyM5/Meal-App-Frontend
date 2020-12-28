@@ -21,11 +21,6 @@ componentWillUnmount(){
     this.props.unsetFood()
   }
 
-createingredient = () => {
-    
-
-
-}
 
 renderRedirect = () => {
     const API = "http://localhost:3000"
@@ -44,7 +39,9 @@ handleClick = (e) => {
     this.setState({
         redirect: true
     })   
-    // createingredient()
+    const {id, location} = this.props
+    // console.log(id, location.state.mealId)
+    this.props.addToMeal({id: id, mealId: location.state.mealId})
 
 }
 
