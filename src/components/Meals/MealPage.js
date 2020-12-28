@@ -9,6 +9,7 @@ componentDidMount(){
     const id = this.props.match.params.id
     
     this.props.setSelectedMeal(id)
+
 }
 
 componentWillUnmount(){
@@ -19,13 +20,21 @@ componentWillUnmount(){
 render(){
     
     const { name, id, user_id, history, ingredients } = this.props
-    // console.log(ingredients)
+
+    console.log(this.props)
+
     return(
         <>
         <div className="card" style={{color: "red"}}>
             <p id={id}>{name}</p>
             <p>User: {user_id}</p>
-            { ingredients ? ingredients.map(ingredient => <p key={ingredient.id}>Food ID: {ingredient.food_id}</p>) : null }
+            {/* {ingredients ? ingredients.map(ingredient => console.log(this.props.filter(ingredient.food_id))) : null} */}
+            { ingredients ? ingredients.map(ingredient => 
+            
+            <p key={ingredient.id}> <Link to={{ 
+                pathname: '/foods/' + ingredient.food_id,
+                state: {id}
+            }}>Food ID: {ingredient.food_id}</Link></p>) : null }
             <Link to={{ 
                 pathname: `/foods`,
                 state: {id}
@@ -38,6 +47,9 @@ render(){
 
 }
 
-const mapStateToProps = (state) => ({...state.meals.selectedMeal})
+const mapStateToProps = (state) => ({
+    ...state.meals.selectedMeal
+
+})
 
 export default connect( mapStateToProps, { setSelectedMeal, unsetMeal } )(MealPage)

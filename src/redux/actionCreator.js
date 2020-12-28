@@ -44,9 +44,9 @@ export const setSelectedMeal = (id) => {
   return dispatch => {
     fetch(API + "/meals/" + id)
     .then(res => res.json())
-    .then(food => dispatch({
+    .then(meal => dispatch({
       type: "SET_SELECTED_MEAL",
-      payload: food
+      payload: meal
     }))
   }
 }
@@ -54,16 +54,25 @@ export const setSelectedMeal = (id) => {
 export const addToMeal = (data) => {
     console.log(data)
     return dispatch => {
-      fetch(API + "/meals/" + data.mealId +"/ingredients", {
+      fetch(API + "/meals/" + data.mealId + "/ingredients", {
         method: "POST",
         headers: {
-          'Authorization': localStorage.token,
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
       })
-      .then(res => res.json)
-    }
+      .then(res => console.log(res, data))
+      } 
+    //   fetch(API + "/meals/" + data.mealId + "/ingredients", {
+    //     method: "POST",
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'Authorization': localStorage.token
+    //     },
+    //     body: JSON.stringify(data),}
+    //   )
+    //   .then(res => console.log(res))
+    // }
 }
 
 export const handleLogin = (e) => ({type: "LOGIN_FORM", payload: {name: e.target.name, value: e.target.value}})

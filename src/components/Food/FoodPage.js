@@ -50,33 +50,36 @@ handleClick = (e) => {
 
 render(){
     
-    const { name, id, calories, history, carbs, water} = this.props 
+    const { name, id, calories, history, carbs, water, nutrient_hash} = this.props 
     
-    
+    // console.log(nutrient_hash)
 
-    // for (const key in this.props) {
-    //     // console.log( `${key}: ${this.props[key]}`)
-    //     const nutrient = `${this.props[key]}`
-    //     // console.log(key)
-    //     // switch(key){
-    //     //     case "history":
-    //     //         return null
-    //     //     case "location":
-    //     //         return null
-    //     //     case "match":
-    //     //         return null
-    //     //     case "staticContext":
-    //     //         return null
-    //     //     case "setSelectedFood":
-    //     //         return null
-    //     //     case "unsetFood":
-    //     //         return null
-    //     //     case "addToMeal":
-    //     //         return null
-    //     //     default:
-    //     //         return <p>{`${key}: ${this.props[key]}`}</p> 
-    //     // }
-    // }
+    for (const key in nutrient_hash) {
+        // console.log( `${key}: ${nutrient_hash[key]}`)
+        const parse = nutrient_hash[key]
+        const nutrient = parse.nutrientName
+
+     
+        // switch(nutrient){
+        //     case "history":
+        //         return null
+        //     case "location":
+        //         return null
+        //     case "match":
+        //         return null
+        //     case "staticContext":
+        //         return null
+        //     case "setSelectedFood":
+        //         return null
+        //     case "unsetFood":
+        //         return null
+        //     case "addToMeal":
+        //         return null
+        //     default: 
+        //         return <p>{nutrient}</p>
+        // }
+      
+    }
 
     
     
