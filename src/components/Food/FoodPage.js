@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router';
 import { setSelectedFood, unsetFood, addToMeal} from '../../redux/actionCreator'
+import cuid from 'cuid'
 
 
 class FoodPage extends Component {
@@ -52,44 +53,19 @@ render(){
     
     const { name, id, calories, history, carbs, water, nutrient_hash} = this.props 
     
-    // console.log(nutrient_hash)
+    console.log(nutrient_hash)
 
-    for (const key in nutrient_hash) {
-        // console.log( `${key}: ${nutrient_hash[key]}`)
-        const parse = nutrient_hash[key]
-        const nutrient = parse.nutrientName
-
-     
-        // switch(nutrient){
-        //     case "history":
-        //         return null
-        //     case "location":
-        //         return null
-        //     case "match":
-        //         return null
-        //     case "staticContext":
-        //         return null
-        //     case "setSelectedFood":
-        //         return null
-        //     case "unsetFood":
-        //         return null
-        //     case "addToMeal":
-        //         return null
-        //     default: 
-        //         return <p>{nutrient}</p>
-        // }
-      
-    }
-
-    
+    // nutrient_hash.map(nutrient => {
+    //     // console.log(nutrient.nutrientId)
+    // })
     
     return(
         <div className="card">
             {this.renderRedirect()}
+            
             <p id={id}>{name}</p>
             <p>Calories: {calories}</p>
-            <p>Carbs: {carbs}</p>
-            <p>Water: {water}</p>
+            {nutrient_hash ? nutrient_hash.map(nutrient => <p key={cuid()}>{nutrient.nutrientName}: {nutrient.value}</p>) : null}
             <button onClick={this.handleClick}>Add To Meal</button>
             <button onClick={ history.goBack }>Go back!</button>
         </div>
