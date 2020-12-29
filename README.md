@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Meal Calculator App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -6,8 +6,12 @@ This React application will allow you to build meals using nutrient profiles fro
 
 <a href='https://github.com/antimonysayz/Meal-App-Backend'>More Information on Backend Rails API</a>
 
-
-
+## User Stories:
+- Users can create/delete accounts
+- Users can create/delete their own recipes/meals
+- Users have access to food database to search for nutritional value of individual items
+- Users can search for recipes based on an image they upload (Spoonacular API required)
+- Users can also compile a nutrient list component of all the ingredients on selected meals/recipes.
 
 ## Available Scripts
 
