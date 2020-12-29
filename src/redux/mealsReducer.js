@@ -2,14 +2,14 @@ import cuid from 'cuid'
 
 const nullObj = {
     id: "",
-    name: "",
+    name: ""
     
   }
   
 const initialState = {
 meals: [],
-ingredients: [],
-selectedMeal: nullObj
+selectedMeal: nullObj,
+ingredients: nullObj
 }
 
   
@@ -23,7 +23,7 @@ const manageMeals = (state=initialState, action) => {
           console.log(action.payload)
           return {...state, selectedMeal: action.payload }
       case 'SET_SELECTED_INGREDIENTS':
-        return {...state, ingredients: action.payload}
+        return {...state, ingredients: {...state.nutrients, nutrients: action.payload}}
       case 'UNSET_MEAL':
         return {...state, selectedMeal:nullObj }
       case 'ADD_MEAL':

@@ -49,7 +49,8 @@ render(){
 }
 
 const mapStateToProps = (state) => ({
-    ...state.meals.selectedMeal
+    ...state.meals.selectedMeal,
+    ...state.meals.ingredients
 
 })
 
