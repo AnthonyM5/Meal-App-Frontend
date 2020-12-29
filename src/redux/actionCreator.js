@@ -51,6 +51,17 @@ export const setSelectedMeal = (id) => {
   }
 }
 
+export const setSelectedIngredients = (id) => {
+  return dispatch => {
+    fetch(API + "/meals/" + id + "/ingredients")
+    .then(res => res.json())
+    .then(ingredients => dispatch({
+      type: "SET_SELECTED_INGREDIENTS",
+      payload: ingredients
+    }))
+  }
+}
+
 export const addToMeal = (data) => {
     console.log(data)
     return dispatch => {

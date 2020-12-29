@@ -23,7 +23,7 @@ componentWillUnmount(){
 
 
 renderRedirect = () => {
-    const API = "http://localhost:3000"
+    // const API = "http://localhost:3000"
     const mealId = this.props.location.state.mealId
     if (this.state.redirect) {
       return <Redirect to={

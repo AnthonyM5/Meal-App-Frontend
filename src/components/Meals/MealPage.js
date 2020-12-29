@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setSelectedMeal, unsetMeal } from '../../redux/actionCreator'
+import { setSelectedMeal, setSelectedIngredients, unsetMeal } from '../../redux/actionCreator'
 // import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 class MealPage extends Component {
@@ -9,6 +9,7 @@ componentDidMount(){
     const id = this.props.match.params.id
     
     this.props.setSelectedMeal(id)
+    this.props.setSelectedIngredients(id)
 
 }
 
@@ -52,4 +53,4 @@ const mapStateToProps = (state) => ({
 
 })
 
-export default connect( mapStateToProps, { setSelectedMeal, unsetMeal } )(MealPage)
+export default connect( mapStateToProps, { setSelectedMeal, unsetMeal, setSelectedIngredients } )(MealPage)
