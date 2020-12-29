@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import { setSelectedMeal, setSelectedIngredients, unsetMeal } from '../../redux/actionCreator'
 // import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import cuid from 'cuid'
+
+
 class MealPage extends Component {
 
 componentDidMount(){
@@ -20,22 +23,21 @@ componentWillUnmount(){
 
 render(){
     
-    const { name, id, user_id, history, ingredients } = this.props
+    const { name, id, user_id, history, nutrients, ingredients } = this.props
 
-    console.log(this.props)
+    console.log(this.props.nutrients)
 
     return(
         <>
         <div className="card" style={{color: "red"}}>
             <p id={id}>{name}</p>
             <p>User: {user_id}</p>
-            {/* {ingredients ? ingredients.map(ingredient => console.log(this.props.filter(ingredient.food_id))) : null} */}
-            { ingredients ? ingredients.map(ingredient => 
-            
-            <p key={ingredient.id}> <Link to={{ 
-                pathname: '/foods/' + ingredient.food_id,
+            {/* {nutrients ? nutrients.map(ingredient => console.log(this.props.filter(ingredient.food_id))) : null} */}
+            { nutrients ? nutrients.map(nutrient => 
+            <p key={cuid()}> <Link to={{ 
+                pathname: '/foods/' + nutrient.id,
                 state: {id}
-            }}>Food ID: {ingredient.food_id}</Link></p>) : null }
+            }}>{nutrient.name}</Link></p>) : null }
             <Link to={{ 
                 pathname: `/foods`,
                 state: {id}
