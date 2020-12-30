@@ -16,17 +16,18 @@ const FoodCards = (props) => {
     // for (const [name, value] of Object.entries(state.foods)) {
     //   console.log(`${JSON.stringify(name)}:`)
     // }
-    // console.log(props)
+    
     const searchedFoods = props.foods.filter(food => {
       return food.name.toLowerCase().includes(props.search.toLowerCase())
     })
     const { history, location } = props
+    console.log(searchedFoods)
     return (
       <>
       <Filter />
       <button onClick={history.goBack}>Go Back!</button>
       <div className="cards">
-        {searchedFoods.map(food => <FoodCard key={food.id} {...food} mealId={location.state.id}/> )}
+        { location.state ? searchedFoods.map(food => <FoodCard key={food.id} {...food} mealId={location.state.id}/>) : searchedFoods.map(food => <FoodCard key={food.id} {...food}/>) }
       </div>
       </>
     )
