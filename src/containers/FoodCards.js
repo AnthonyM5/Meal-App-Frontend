@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from 'react-bootstrap/Card'
 import { connect } from 'react-redux'
 // import { compose } from 'redux'
 import FoodCard from '../components/Food/FoodCard'
@@ -26,16 +27,16 @@ const FoodCards = (props) => {
 
         
     return (
-      searchedFoods ? <Spinner animation="border" role="status">
-      <span className="sr-only">Loading...</span>
-    </Spinner> :
+      searchedFoods.length > 0 ? 
       <>
       <Filter />
       <button onClick={history.goBack}>Go Back!</button>
       <div className="cards">
         { location.state ? searchedFoods.map(food => <FoodCard key={food.id} {...food} mealId={location.state.id}/>) : searchedFoods.map(food => <FoodCard key={food.id} {...food}/>) }
       </div>
-      </>
+      </> : <Spinner animation="border" size="xl" variant="primary" role="status">
+      <span className="sr-only">Loading...</span>
+    </Spinner>
     ) 
 }
 
