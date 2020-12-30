@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import Meal from '../Meals/Meal'
+import Filter from '../../components/Filters'
 
 
 const Meals = (props) => {

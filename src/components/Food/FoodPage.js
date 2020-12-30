@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router';
 import { setSelectedFood, unsetFood, addToMeal} from '../../redux/actionCreator'
+import ListGroup from 'react-bootstrap/ListGroup'
 import cuid from 'cuid'
 
 
@@ -65,7 +66,9 @@ render(){
             
             <p id={id}>{name}</p>
             <p>Calories: {calories}</p>
-            {nutrient_hash ? nutrient_hash.map(nutrient => <p key={cuid()}>{nutrient.nutrientName}: {nutrient.value}</p>) : null}
+            <ListGroup>
+            {nutrient_hash ? nutrient_hash.map(nutrient => <ListGroup.Item>{nutrient.nutrientName}: {nutrient.value}</ListGroup.Item>) : null}
+            </ListGroup>
             <button onClick={this.handleClick}>Add To Meal</button>
             <button onClick={ history.goBack }>Go back!</button>
         </div>

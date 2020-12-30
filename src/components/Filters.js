@@ -6,10 +6,9 @@ const Filters = (props) => {
   return(
     <form>
         <label>
-          Search:
+          Search: 
           <input type="text" name="search" value={props.search} onChange={props.handleSearchForm} />
-        </label><br/>
-        <input type="submit" value="Submit" />
+        </label>
       </form>
   )
 }

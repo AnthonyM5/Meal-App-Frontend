@@ -20,10 +20,11 @@ class UserContainer extends Component {
       const { history } = this.props
       return (
         <div>
-          <button onClick={history.goBack}>Go Back!</button>
+          
           <UserInput user={this.props.users} createMeal={this.props.createMeal} addMeal={this.props.addMeal}/>
           <Meals meals={this.props.meals} deleteMeal={this.props.deleteMeal} />
           
+          <button onClick={history.goBack}>Go Back!</button>
         </div>
       )
     }

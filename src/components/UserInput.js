@@ -45,13 +45,17 @@ class UserInput extends Component {
         return (
           
           <div>
-            <form onSubmit={(event) => this.handleOnSubmit(event)}>
-              <input 
+            <form onSubmit={(event) => this.handleOnSubmit(event)}> 
+            <label>
+            Meal Name:
+            <input 
               type='text'
               value={this.state.text}
-              onChange={this.handleOnChange}
-              />
-              <input type='submit' />
+              onChange={this.handleOnChange} />
+            </label>
+              <input 
+              value='Create'
+              type='submit' />
             </form>
           </div>
         );
