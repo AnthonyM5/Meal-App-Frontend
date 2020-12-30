@@ -186,7 +186,12 @@ export const autoLogin = () => {
   }
 }
 
-export const logout = () => ({type: "LOGOUT"})
+export const logout = () => {
+  return dispatch => {
+    localStorage.clear("token")
+    dispatch({type: "LOGOUT"})
+  }
+}
 
 
 export const unsetFood = () => ({type: "UNSET_FOOD"})
