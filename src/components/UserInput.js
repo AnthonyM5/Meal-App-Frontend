@@ -6,12 +6,14 @@ import { createMeal } from '../redux/actionCreator'
 class UserInput extends Component {
     state = {
         text: "",
-        user: this.props.user
+        user: this.props.user,
+        url: ""
       }
     
       handleOnChange = (e) => {
+        // console.log(e.target.type)
         this.setState({
-          text: e.target.value
+          [e.target.type]: e.target.value
         })
       }
     
@@ -21,11 +23,13 @@ class UserInput extends Component {
         // this.props.addMeal(this.state.text);
         this.props.createMeal({
           name: this.state.text,
-          user: this.props.user
+          user: this.props.user,
+          imgUrl: this.state.url
         })
         // console.log(this.state)
         this.setState({
-          text: ''
+          text: '',
+          url: ""
         });
       }
 
@@ -42,17 +46,25 @@ class UserInput extends Component {
       // }
     
       render() {
+        console.log(this.state)
         return (
           
           <div>
             <form onSubmit={(event) => this.handleOnSubmit(event)}> 
-            <label>
-            Meal Name:
+            <label> Meal Name: 
             <input 
               type='text'
               value={this.state.text}
               onChange={this.handleOnChange} />
             </label>
+            <br></br>
+            <label> Image URL: 
+            <input 
+              type='url'
+              value={this.state.url}
+              onChange={this.handleOnChange} />
+            </label>
+            <br></br>
               <input 
               value='Create'
               type='submit' />

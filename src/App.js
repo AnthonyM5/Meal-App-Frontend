@@ -19,6 +19,7 @@ import { NavDropdown } from 'react-bootstrap';
 // import { Form } from 'react-bootstrap';
 // import { FormControl } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 class App extends Component {
@@ -40,9 +41,9 @@ class App extends Component {
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link href="/foods">Foods</Nav.Link>
-                  <Nav.Link href="/meals">Meals</Nav.Link>
-                  <Nav.Link href="/uploads">Image Guesser</Nav.Link>
+                  <Nav.Link as={Link} to="/foods">Foods</Nav.Link>
+                  <Nav.Link as={Link} to="/meals">Meals</Nav.Link>
+                  <Nav.Link as={Link} to="/uploads">Image Guesser</Nav.Link>
                   <NavDropdown title="TensorFlow" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
