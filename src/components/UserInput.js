@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createMeal } from '../redux/actionCreator'
+import { Redirect } from 'react-router';
+
 
 
 class UserInput extends Component {
@@ -16,6 +18,8 @@ class UserInput extends Component {
           [e.target.type]: e.target.value
         })
       }
+
+      
     
       
       handleOnSubmit(event) {
@@ -31,7 +35,12 @@ class UserInput extends Component {
           text: '',
           url: ""
         });
+        <Redirect to={{ pathname: "/meals"}}/>
       }
+
+            
+
+
 
       // handleFile = (e) => {
       //   const content = e.target.result;

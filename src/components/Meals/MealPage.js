@@ -23,9 +23,9 @@ componentWillUnmount(){
 
 render(){
     
-    const { name, id, history, nutrients, username } = this.props
-
-    console.log(this.props)
+    const { name, history, nutrients, username } = this.props
+    const id = this.props.match.params.id
+    console.log(id)
 
     return(
         <>
