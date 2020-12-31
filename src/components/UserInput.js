@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createMeal } from '../redux/actionCreator'
+import { createMeal, setMeals} from '../redux/actionCreator'
 import { Redirect } from 'react-router';
 
 
@@ -30,12 +30,12 @@ class UserInput extends Component {
           user: this.props.user,
           imgUrl: this.state.url
         })
-        // console.log(this.state)
+        console.log(this.props)
         this.setState({
           text: '',
           url: ""
         });
-        <Redirect to={{ pathname: "/meals"}}/>
+        return <Redirect to={{ pathname: "/meals"}}/>
       }
 
             
@@ -96,4 +96,4 @@ class UserInput extends Component {
 
 
 
-export default connect(null, {createMeal})(UserInput)
+export default connect(null, {createMeal, setMeals})(UserInput)
