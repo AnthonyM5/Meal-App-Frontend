@@ -9,7 +9,8 @@ class UserInput extends Component {
     state = {
         text: "",
         user: this.props.user,
-        url: ""
+        url: "",
+        redirect: null
       }
     
       handleOnChange = (e) => {
@@ -30,12 +31,18 @@ class UserInput extends Component {
           user: this.props.user,
           imgUrl: this.state.url
         })
-        console.log(this.props)
         this.setState({
-          text: '',
-          url: ""
+          redirect: true
         });
-        return <Redirect to={{ pathname: "/meals"}}/>
+        console.log(this.state)
+        // return <Redirect to="/meals"/>
+      }
+
+      renderRedirect = () => {
+        if (this.state.redirect) {
+          console.log("redirect")
+          return <Redirect to={{ pathname: "/meals" }}/>
+        }
       }
 
             
@@ -56,9 +63,11 @@ class UserInput extends Component {
     
       render() {
         // console.log(this.state)
+        
         return (
           
           <div>
+            {this.renderRedirect()}
             <form onSubmit={(event) => this.handleOnSubmit(event)}> 
             <label> Meal Name: 
             <input 
