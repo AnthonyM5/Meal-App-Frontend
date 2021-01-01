@@ -18,9 +18,11 @@ class UserContainer extends Component {
 
 
     render(){
+        const { username, meals } = this.props
         return (
             <>
-            <h1>User</h1>
+            <h1>{username}</h1>
+            <h3>Current Meal Count: {meals.meals.length}</h3>
             <UserInput user={this.props.users} createMeal={this.props.createMeal}/>
             </>
         )
