@@ -11,7 +11,7 @@ import MealsPage from './components/Meals/MealPage';
 // import Meal from './components/Meals/Meal';
 import { Switch, Route } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
-import UserContainer from './containers/UserContainer';
+import MealsContainer from './containers/MealsContainer';
 // import { compose } from 'redux';
 import {Navbar} from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
@@ -20,6 +20,7 @@ import { NavDropdown } from 'react-bootstrap';
 // import { FormControl } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import UsersContainer from './containers/UsersContainer';
 
 
 class App extends Component {
@@ -59,7 +60,8 @@ class App extends Component {
               <img src={logo} className="App-logo" alt="logo" /><Login /></header>}
         <Switch>
           <Route path="/meals/:id" component={MealsPage} />
-          <Route path="/meals" component={UserContainer} />
+          <Route path="/meals" component={MealsContainer} />
+          <Route path="/users" component={UsersContainer}/>
           <Route path="/foods/:id" component={FoodPage}/>
           <Route path="/foods" component={FoodCards} />
           <Route path="/uploads" component={FileReader}/>

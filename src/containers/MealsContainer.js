@@ -7,7 +7,7 @@ import { createMeal, setMeals } from '../redux/actionCreator'
  
 
 
-class UserContainer extends Component {
+class MealsContainer extends Component {
 
   componentDidMount() { 
     console.log(this.props.user)
@@ -21,7 +21,7 @@ class UserContainer extends Component {
       return (
         <div>
           
-          <UserInput user={this.props.users} createMeal={this.props.createMeal} addMeal={this.props.addMeal}/>
+          {/* <UserInput user={this.props.users} createMeal={this.props.createMeal} addMeal={this.props.addMeal}/> */}
           <Meals meals={this.props.meals} deleteMeal={this.props.deleteMeal} />
           
           <button onClick={history.goBack}>Go Back!</button>
@@ -47,6 +47,6 @@ class UserContainer extends Component {
 
   
   
-  export default connect(mapStateToProps, {mapDispatchToProps, setMeals})(UserContainer);
+  export default connect(mapStateToProps, {mapDispatchToProps, setMeals})(MealsContainer);
 
-  // export default UserContainer
+  // export default MealsContainer
