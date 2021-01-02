@@ -28,11 +28,12 @@ class App extends Component {
   componentDidMount(){
     localStorage && this.props.autoLogin()
     this.props.setFoods()
-    // this.props.setMeals()
+    
   }
 
   render(){
-    // console.log(useParams)
+    console.log(this.props)
+    const { users, foods } = this.props
     return (
       <div className="App">
         {this.props.users.id ?     
@@ -56,6 +57,7 @@ class App extends Component {
                 </Nav>
               </Navbar.Collapse>
             </Navbar>    
+            <h1> Welcome {users.username}! </h1>
         </>: <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" /><Login /></header>}
         <Switch>

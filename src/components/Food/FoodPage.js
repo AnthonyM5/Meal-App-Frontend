@@ -27,7 +27,7 @@ componentWillUnmount(){
 renderRedirect = () => {
     // const API = "http://localhost:3000"
     const mealId = this.props.location.state.mealId
-    console.log(this.props.location)
+    // console.log(this.props.location)
     if (this.state.redirect) {
       return <Redirect to={
         { pathname: "/meals/" + mealId
@@ -43,7 +43,7 @@ handleClick = (e) => {
         redirect: true
     })   
     const {id, location} = this.props
-    console.log(id, location.state.mealId)
+    // console.log(id, location.state.mealId)
     this.props.addToMeal({id: id, mealId: location.state.mealId})
 
 }
@@ -53,14 +53,14 @@ handleClick = (e) => {
 
 render(){
     
-    const { name, id, calories, history, nutrient_hash} = this.props 
+    const { name, id, calories, history, nutrient_hash, location} = this.props 
     
     // console.log(nutrient_hash)
 
     // nutrient_hash.map(nutrient => {
     //     // console.log(nutrient.nutrientId)
     // })
-    
+    console.log(this.props)
     return(
         <div className="card">
             {this.renderRedirect()}
@@ -70,7 +70,7 @@ render(){
             <ListGroup as="ul">
             {nutrient_hash ? nutrient_hash.map(nutrient => <ListGroup.Item as="li" key={cuid()}>{nutrient.nutrientName}: {nutrient.value}</ListGroup.Item>) : null}
             </ListGroup>
-            <button onClick={this.handleClick}>Add To Meal</button>
+            { location.state.mealId ? <button onClick={this.handleClick}>Add To Meal</button> : null }
             <button onClick={ history.goBack }>Go back!</button>
         </div>
         )
