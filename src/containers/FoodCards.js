@@ -23,7 +23,7 @@ const FoodCards = (props) => {
       return food.name.toLowerCase().includes(props.search.toLowerCase())
     })
     const { history, location } = props
-    console.log(location) 
+    // console.log(location) 
 
         
     return (

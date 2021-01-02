@@ -6,14 +6,17 @@ import mealDefault from '../../mealDefault.svg';
 const Meal = (props) => {
   const {id, name, img_url} = props
 
-  
+  // console.log(props.ingredients.length)
   
   return (
     <Card style={{display: 'flex' }}>
        <Card.Img variant="top" src={img_url ?  img_url : mealDefault } />
           <Card.Header>ID: {id} </Card.Header>
           <Card.Title>Name: {name}</Card.Title>
-          <Card.Text><Link to={`/meals/${id}`}>See More</Link></Card.Text>
+          <Card.Text>
+            <p>Number of Ingredients: {props.ingredients.length} </p>
+            <Link to={`/meals/${id}`}>See More</Link>
+            </Card.Text>
     </Card>
   )
 }

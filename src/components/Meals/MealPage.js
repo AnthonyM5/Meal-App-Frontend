@@ -23,19 +23,21 @@ componentWillUnmount(){
 
 render(){
     
-    const { name, history, nutrients, username } = this.props
+    const { name, history, nutrients, username, calorieCount} = this.props
     const id = this.props.match.params.id
-    console.log(id)
-
+    console.log(this.props)
     return(
         <>
         <div className="card" style={{color: "red"}}>
-            <h1>User: {username}</h1>
+            <h1>{username}</h1>
             <h3 id={id}>{name}</h3>
+            <h4>Calorie Count: {calorieCount}</h4>
             {/* {nutrients ? nutrients.map(ingredient => console.log(this.props.filter(ingredient.food_id))) : null} */}
             { nutrients ? nutrients.map(nutrient => 
-                
-            <p key={cuid()}> <Link to={{ 
+            <p key={cuid()}> 
+            Food ID: {nutrient.id} Calorie Count: {nutrient.calories}<br>
+            </br>
+            <Link to={{ 
                 pathname: '/foods/' + nutrient.id,
                 state: {id}
             }}>{nutrient.name}</Link></p> ) : null }
@@ -49,7 +51,11 @@ render(){
         )
     }
 
+    
+
 }
+
+
 
 const mapStateToProps = (state) => ({
     ...state.meals.selectedMeal,

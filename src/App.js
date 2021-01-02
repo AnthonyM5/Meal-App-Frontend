@@ -29,11 +29,11 @@ class App extends Component {
   }
 
   render(){
-    console.log(this.props)
+    // console.log(this.props)
     const { users, foods } = this.props
     return (
       <div className="App">
-        {this.props.users.id ?     
+        {users.id ?     
         <> 
           <Navbar bg="light" expand="lg">
               <Navbar.Brand as={Link} to="/users">Food Nutrient Calculator</Navbar.Brand>
