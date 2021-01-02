@@ -4,13 +4,13 @@ import Card from 'react-bootstrap/Card'
 import mealDefault from '../../mealDefault.svg';
 
 const Meal = (props) => {
-  const {id, name, img_url} = props
+  const {id, name, imgUrl} = props
 
   // console.log(props.ingredients.length)
   
   return (
     <Card style={{display: 'flex' }}>
-       <Card.Img variant="top" src={img_url ?  img_url : mealDefault } />
+       <Card.Img variant="top" src={imgUrl ?  imgUrl : mealDefault } />
           <Card.Header>ID: {id} </Card.Header>
           <Card.Title>Name: {name}</Card.Title>
           <Card.Text>

@@ -11,7 +11,7 @@ class UserContainer extends Component {
     
     componentDidMount(){
         this.props.setMeals()
-        console.log(this.props)
+        // console.log(this.props)
     }
 
   
