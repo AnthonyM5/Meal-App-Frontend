@@ -5,12 +5,17 @@ import mealDefault from '../../mealDefault.svg';
 
 const Meal = (props) => {
   const {id, name, imgUrl} = props
+  const myStyle = {
+    height: '50%', 
+    width: 'auto', 
+    objectFit: 'contain' 
+  }
 
   // console.log(props.ingredients.length)
-  
+  console.log(imgUrl)
   return (
-    <Card style={{display: 'flex' }}>
-       <Card.Img variant="top" src={imgUrl ?  imgUrl : mealDefault } />
+    <Card style={{ height: '18rem' }}>
+      <Card.Img variant="top" src={imgUrl ?  imgUrl : mealDefault } style={myStyle}/>
           <Card.Header>ID: {id} </Card.Header>
           <Card.Title>Name: {name}</Card.Title>
           <Card.Text>

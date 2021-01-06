@@ -29,6 +29,13 @@
   color: #61dafb;
 }
 
+/* .card-img-top {
+  display: flex;
+  align-items: center;
+  
+  
+} */
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -45,9 +52,6 @@
 }
 
 .card {
-  /* width: 300px;
-  height: 500px; */
   margin: 10px;
-  background-color: #00b7ff;
   border-radius: 10px;
 }

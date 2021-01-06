@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import UserInput from '../components/UserInput'
+// import UserInput from '../components/UserInput'
 // import FileReader from '../components/FileReader'
 import Meals from '../components/Meals/Meals';
 import { createMeal, setMeals } from '../redux/actionCreator'
