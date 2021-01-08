@@ -90,6 +90,7 @@ export const handleLogin = (e) => ({type: "LOGIN_FORM", payload: {name: e.target
 export const toggleSignup = () => ({type: "TOGGLE_SIGNUP"})
 
 export const handleSearchForm = (e) => {
+  e.preventDefault()
   const target = e.target;
   const value = target.type === 'checkbox' ? target.checked : target.value;
   return ({
@@ -195,5 +196,7 @@ export const logout = () => {
 
 
 export const unsetFood = () => ({type: "UNSET_FOOD"})
+
+export const unsetForms = () => ({type: "UNSET_FILTERS"}) 
 
 export const unsetMeal = () => ({type: "UNSET_MEAL"})

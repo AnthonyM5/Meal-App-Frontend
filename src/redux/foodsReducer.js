@@ -25,7 +25,15 @@ const foodsReducer = (state=initialState, action) => {
             ...state.filtersForm,
             [action.payload.name]: action.payload.value
           }}
-        case "UNSET_FOODS":
+
+        case 'UNSET_FILTERS':
+          console.log('start')
+          return {...state, filtersForm: {
+            ...state.filtersForm, 
+            search: "",
+            filter: ""
+          }}
+        case 'UNSET_FOODS':
             return {...state, selectedFood: nullObj}
         default:
           return {...state}

@@ -60,10 +60,14 @@ render(){
         <div className="card">
             {this.renderRedirect()}
             
-            <p id={id}>{name}</p>
+            <p id={id}>{name}
+            <br>
+            </br>
+            Serving Size: 100G
+            </p>
             <p>Calories: {calories}</p>
             <ListGroup as="ul">
-            {nutrientHash ? nutrientHash.map(nutrient => <ListGroup.Item as="li" key={cuid()}>{nutrient.nutrientName}: {nutrient.value}</ListGroup.Item>) : <Spinner animation="border" size="xl" variant="primary" role="status">
+            {nutrientHash ? nutrientHash.map(nutrient => <ListGroup.Item as="li" key={cuid()}>{nutrient.nutrientName}: {nutrient.value} {nutrient.unitName}</ListGroup.Item>) : <Spinner animation="border" size="xl" variant="primary" role="status">
       <span className="sr-only">Loading...</span>
     </Spinner>}
             </ListGroup>

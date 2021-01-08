@@ -1,10 +1,11 @@
-import React from 'react'
-import Card from 'react-bootstrap/Card'
+import { React, useEffect} from 'react'
+// import Card from 'react-bootstrap/Card'
 import { connect } from 'react-redux'
 // import { compose } from 'redux'
 import FoodCard from '../components/Food/FoodCard'
 import Filter from '../components/Filters'
-import Spinner from 'react-bootstrap/Spinner'
+import { unsetForms } from '../redux/actionCreator'
+// import Spinner from 'react-bootstrap/Spinner'
 // import { Link } from 'react-router-dom'
 
 
@@ -18,12 +19,16 @@ const FoodCards = (props) => {
     // for (const [name, value] of Object.entries(state.foods)) {
     //   console.log(`${JSON.stringify(name)}:`)
     // }
+
+    useEffect(() => {
+      return () => props.unsetForms()
+    }, [])
     
     const searchedFoods = props.foods.filter(food => {
       return food.name.toLowerCase().includes(props.search.toLowerCase())
     })
     const { history, location } = props
-    // console.log(location) 
+    
 
         
     return (
@@ -34,9 +39,7 @@ const FoodCards = (props) => {
       <div className="cards">
         { location.state ? searchedFoods.map(food => <FoodCard key={food.id} {...food} mealId={location.state.id}/>) : searchedFoods.map(food => <FoodCard key={food.id} {...food}/>) }
       </div>
-      </> : <Spinner animation="border" size="xl" variant="primary" role="status">
-      <span className="sr-only">Loading...</span>
-    </Spinner>
+      </> : <h1>"Not Found"</h1> 
     ) 
 }
 
@@ -46,4 +49,4 @@ const msp = (state) => ({
 })
   
   
-  export default connect(msp)(FoodCards)
+  export default connect(msp, { unsetForms })(FoodCards)
