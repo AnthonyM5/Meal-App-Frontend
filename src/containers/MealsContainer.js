@@ -23,7 +23,7 @@ class MealsContainer extends Component {
           
           {/* <UserInput user={this.props.users} createMeal={this.props.createMeal} addMeal={this.props.addMeal}/> */}
           <Meals meals={this.props.meals} deleteMeal={this.props.deleteMeal} />
-          
+          <br></br>
           <button onClick={history.goBack}>Go Back!</button>
         </div>
       )
