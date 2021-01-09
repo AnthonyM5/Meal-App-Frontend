@@ -39,7 +39,7 @@ const FoodCards = (props) => {
       <div className="cards">
         { location.state ? searchedFoods.map(food => <FoodCard key={food.id} {...food} mealId={location.state.id}/>) : searchedFoods.map(food => <FoodCard key={food.id} {...food}/>) }
       </div>
-      </> : <h1>"Not Found"</h1> 
+      </> : <> <h1>"Not Found"</h1> <button onClick={props.unsetForms}>Search Again</button></>
     ) 
 }
 
