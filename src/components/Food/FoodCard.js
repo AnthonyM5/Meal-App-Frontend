@@ -9,7 +9,7 @@ const FoodCard = (props) => {
     return (
       <>
           <Card>
-          <Card.Header>{id}</Card.Header>
+          <Card.Header>Food ID: {id}</Card.Header>
           <Card.Text>
       {name}
     </Card.Text>

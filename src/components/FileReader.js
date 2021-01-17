@@ -32,10 +32,10 @@ class FileReader extends Component {
     console.log(this.props)
     return(
       <div className="files">
+        <h1>Predictions</h1>
         <ReactFileReader handleFiles={this.handleFiles}>
-          <button className='btn'>Upload</button>
+          <button>Upload</button>
         </ReactFileReader>
-        <p>Predictions</p>
         <img src={this.state.url} id="img" alt={this.state.file.name}/>
         <p>{this.state.url ? <button onClick={this.handlePrediction}>Predict</button> : null}</p>
         <p>{this.state.prediction ? this.state.prediction[0].className : null}</p>
