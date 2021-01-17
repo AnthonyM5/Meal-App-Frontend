@@ -99,6 +99,13 @@ export const handleSearchForm = (e) => {
   })
 }
 
+
+// Solved by using onKeyPress to trigger e.preventDefault() only when e.key === 'Enter'  
+// export const preventSubmit = (e) => {
+//   e.preventDefault()
+//   console.log('start')
+// }
+
 export const signUpForm = (data) => {
   return dispatch => {
     fetch(API + "/users", {

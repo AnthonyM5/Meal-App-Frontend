@@ -7,7 +7,7 @@ const Filters = (props) => {
     <form>
         <label>
           Search: 
-          <input type="text" name="search" value={props.search} onChange={props.handleSearchForm} />
+          <input type="text" name="search" value={props.search} onChange={props.handleSearchForm} onSubmit={props.preventSubmit}  onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}/>
         </label>
       </form>
   )

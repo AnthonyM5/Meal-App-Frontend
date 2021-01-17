@@ -32,7 +32,7 @@ class App extends Component {
     
     const { users } = this.props
 
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <div className="App">
         {users.id ?     

@@ -20,7 +20,7 @@ const FoodCards = (props) => {
     //   console.log(`${JSON.stringify(name)}:`)
     // }
 
-    useEffect((props) => {
+    useEffect(() => {
       return () => props.unsetForms()
     }, [])
     
