@@ -57,23 +57,23 @@ render(){
 
     console.log(this.props)
     return(
+        <>
+        <h1>{name}</h1>
+        <h3>Serving Size: 100G
+        <br></br>Calories: {calories}</h3>
         <div className="card">
+        <button onClick={ history.goBack }>Go back!</button>
             {this.renderRedirect()}
+            <h4>Nutrients: </h4>
             
-            <p id={id}>{name}
-            <br>
-            </br>
-            Serving Size: 100G
-            </p>
-            <p>Calories: {calories}</p>
-            <ListGroup as="ul">
+            <ListGroup as="ul" variant="flush">
             {nutrientHash ? nutrientHash.map(nutrient => <ListGroup.Item as="li" key={cuid()}>{nutrient.nutrientName}: {nutrient.value} {nutrient.unitName}</ListGroup.Item>) : <Spinner animation="border" size="xl" variant="primary" role="status">
       <span className="sr-only">Loading...</span>
     </Spinner>}
             </ListGroup>
             { location.state.mealId ? <button onClick={this.handleClick}>Add To Meal</button> : null }
-            <button onClick={ history.goBack }>Go back!</button>
         </div>
+        </>
         )
     }
     

@@ -13,7 +13,7 @@ import { Switch, Route, Link, Redirect } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import MealsContainer from './containers/MealsContainer';
 // import { compose } from 'redux';
-import {Navbar, Nav, NavDropdown, Button} from 'react-bootstrap';
+import {Navbar, Nav, Button} from 'react-bootstrap';
 // import { Form } from 'react-bootstrap';
 // import { FormControl } from 'react-bootstrap';
 import UsersContainer from './containers/UsersContainer';
@@ -29,8 +29,10 @@ class App extends Component {
   }
 
   render(){
-    // console.log(this.props)
-    const { users, foods } = this.props
+    
+    const { users } = this.props
+
+    console.log(this.props)
     return (
       <div className="App">
         {users.id ?     
