@@ -27,7 +27,7 @@ const foodsReducer = (state=initialState, action) => {
           }}
 
         case 'UNSET_FILTERS':
-          console.log('start')
+          // console.log('start')
           return {...state, filtersForm: {
             ...state.filtersForm, 
             search: "",

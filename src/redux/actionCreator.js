@@ -163,7 +163,12 @@ export const loginForm = (data) => {
     .then(res => res.json())
     .then(res => {
       localStorage.token = res.token
-      console.log(res)
+      if (res.error) {
+        dispatch({
+          type: "Wrong User or Password",
+          payload: {error: res.error}
+        })
+      } else  
       dispatch({
         
         type: "SET_USER",

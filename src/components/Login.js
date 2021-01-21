@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { toggleSignup, handleLogin, signUpForm, loginForm} from '../redux/actionCreator'
 
 const Login = (props) => {
-    const { signup, toggleSignup, handleLogin, signUpForm, loginForm, form } = props
+    const { signup, toggleSignup, handleLogin, signUpForm, loginForm, form, error} = props
     const { username, password, passwordConfirmation } = form
 
     const onSubmit = (e) => {
@@ -17,10 +17,13 @@ const Login = (props) => {
       } else {
         loginForm({username: username, password: password})
       }
+      if (error) {
+        alert(error)
+      }
     }
 
     return(
-      
+     
       <>
         <h3>{signup ? "Sign up!" : "Login!"} </h3>
         <form onSubmit={onSubmit}> 
@@ -46,6 +49,7 @@ const Login = (props) => {
         <br/>
         <br/>
         <button onClick={toggleSignup}>Or... {signup ? "Login!" : "Sign up!"}</button>
+        
        
       </>
     )
@@ -53,7 +57,8 @@ const Login = (props) => {
 
   const mapStateToProps = (state) => ({
     signup: state.users.signup,
-    form: state.users.form
+    form: state.users.form,
+    error: state.users.error
   })
 
   export default connect(mapStateToProps, { toggleSignup, handleLogin, signUpForm, loginForm} )(Login)

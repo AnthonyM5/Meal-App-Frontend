@@ -8,7 +8,9 @@ const initialState = {
     id: "",
     username: "",
     signup: false,
-    form: loginForm
+    error: null,
+    form: loginForm,
+    
   }
   
   const userReducer = (state=initialState, action) => {
@@ -20,6 +22,8 @@ const initialState = {
           ...state.form,
           [action.payload.name]: action.payload.value
         }}
+      case "Wrong User or Password":
+        return {...state, ...action.payload}
       case "SET_USER":
         // console.log(action.payload) - Checking to see if User data is passed properly
         return {...state, ...action.payload.user}
