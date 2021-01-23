@@ -10,22 +10,24 @@ import { createMeal, setMeals } from '../redux/actionCreator'
 class MealsContainer extends Component {
 
   componentDidMount() { 
-    console.log(this.props.user)
+    console.log(this.props)
     this.props.setMeals()
     
   }
 
+  // componentWillUnmount() {
+  //   this.props.unsetMeals()
+  // }
     
     render() {
       const { history } = this.props
       return (
-        <div>
-          
+        this.props.user ? <div>
+          <Meals/>
           {/* <UserInput user={this.props.users} createMeal={this.props.createMeal} addMeal={this.props.addMeal}/> */}
-          <Meals deleteMeal={this.props.deleteMeal} />
           <br></br>
           <button onClick={history.goBack}>Go Back!</button>
-        </div>
+        </div> : null 
       )
     }
   }
@@ -33,14 +35,14 @@ class MealsContainer extends Component {
   
   const mapStateToProps = (state) => ({ 
     meals: state.meals,
-    users: state.users.id,
+    user: state.users.id,
     username: state.users.username
   })
   
   const mapDispatchToProps = (dispatch) => {
     return{
         addMeal: (meal) => dispatch({ type: 'ADD_MEAL', meal}),
-        deleteMeal: (id) => dispatch({ type: 'DELETE_MEAL', id}),
+        unsetMeals: () => dispatch({ type: 'UNSET_MEALS'}),
         createMeal: (meal, id) => createMeal(meal, id)
       }
   }

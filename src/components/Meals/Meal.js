@@ -11,7 +11,7 @@ const Meal = (props) => {
     objectFit: 'contain' 
   }
 
-  console.log(props)
+  // console.log(props)
   return (
     <Card style={{ height: '18rem' }}>
       <Card.Img variant="top" src={imgUrl ?  imgUrl : mealDefault } style={myStyle}/>

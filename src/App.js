@@ -35,7 +35,7 @@ class App extends Component {
     // console.log(this.props)
     return (
       <div className="App">
-        {users.id ?     
+        { users.id ?     
         <> 
           <Navbar bg="light" expand="lg">
               <Navbar.Brand as={Link} to="/users">Food Nutrient Calculator</Navbar.Brand>
@@ -57,8 +57,12 @@ class App extends Component {
               </Navbar.Collapse>
             </Navbar>    
             <Redirect to={{ pathname: "/users" }}/>
-        </>: <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" /><Login /></header>}
+        </> : <>
+        <Redirect to={{ pathname: "/" }}/>
+        <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" /> <Login /> </header> 
+              </>
+          }
         <Switch>
           <Route path="/meals/:id" component={MealsPage} />
           <Route path="/meals" component={MealsContainer} />

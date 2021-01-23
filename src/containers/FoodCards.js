@@ -26,7 +26,7 @@ const FoodCards = (props) => {
 
     const [toggle, setToggle] = useState(false);
 
-    console.log(toggle)
+    console.log(props)
 
     // setToggle({toggle: !toggle})
 
@@ -63,7 +63,7 @@ const FoodCards = (props) => {
       <Filter />
       <button onClick={history.goBack}>Go Back!</button>
       { props.search ? <div className="cards">
-        <button onClick={ () => setToggle(!toggle)}>Sort By Calories</button>
+        <button onClick={ () => setToggle(!toggle)}>Sort By</button>
         {
           toggle ? location.state ? filteredFoods.map(food => <FoodCard key={food.id} {...food} mealId={location.state.id}/>) : filteredFoods.map(food => <FoodCard key={food.id} {...food}/>) :
            location.state ? searchedFoods.map(food => <FoodCard key={food.id} {...food} mealId={location.state.id}/>) : searchedFoods.map(food => <FoodCard key={food.id} {...food}/>) 
