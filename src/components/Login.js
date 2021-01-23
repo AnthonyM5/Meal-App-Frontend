@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { toggleSignup, handleLogin, signUpForm, loginForm, unsetError} from '../redux/actionCreator'
 
 const Login = (props) => {
-    const { signup, toggleSignup, handleLogin, signUpForm, loginForm, form, error, unsetError} = props
+    const { signup, toggleSignup, handleLogin, signUpForm, loginForm, form, error} = props
     const { username, password, passwordConfirmation } = form
 
     const onSubmit = (e) => {
@@ -18,10 +18,10 @@ const Login = (props) => {
         loginForm({username: username, password: password})
       }
 
-      // if (error) {
-      //   alert(error)
-      //   unsetError()
-      // }
+      if (error) {
+        props.unsetError()
+        alert("Either Username or Password was incorrect!!!")
+      }
 
     }
 

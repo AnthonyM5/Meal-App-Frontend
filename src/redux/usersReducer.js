@@ -18,7 +18,7 @@ const initialState = {
       case "TOGGLE_SIGNUP":
         return {...state, signup: !state.signup}
       case "LOGIN_FORM":
-        return { ...state, form: {
+        return { ...state, error: null, form: {
           ...state.form,
           [action.payload.name]: action.payload.value
         }}
@@ -26,15 +26,13 @@ const initialState = {
         return {...state, ...action.payload}
       case "SET_USER":
         // console.log(action.payload) - Checking to see if User data is passed properly
-        return {...state, users:{error: null}, ...action.payload.user}
+        return {...state, ...action.payload.user}
       case "LOGOUT":
         console.log("logged out")
         return {...state, username: "", id: ""}
       case "UNSET_ERROR":
         console.log("start")
-        return {...state, users: {...state.users,
-        error: null
-        }}
+        return {...state, error: null}
       default:
         return {...state}
     }
