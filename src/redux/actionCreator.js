@@ -139,11 +139,11 @@ export const createMeal = (data) => {
     })
     .then(res => res.json())
     .then(res => {
-      // console.log(res) 
+      console.log(res) 
       // Check to see if data is called properly in payload
       dispatch({
       type: "ADD_MEAL",
-      payload: { meal: res.name, user: res.user_id}
+      payload: { meal: res.name, user: res.userId}
     })}
     )
     
@@ -165,7 +165,7 @@ export const loginForm = (data) => {
       localStorage.token = res.token
       if (res.error) {
         dispatch({
-          type: "Wrong User or Password",
+          type: "WRONG_USER_OR_PASSWORD",
           payload: {error: res.error}
         })
       } else  
@@ -206,6 +206,7 @@ export const logout = () => {
   }
 }
 
+export const unsetError = () => ({type: "UNSET_ERROR"})
 
 export const unsetFood = () => ({type: "UNSET_FOOD"})
 

@@ -1,9 +1,9 @@
-import React from 'react'
+import {React, useEffect} from 'react'
 import { connect } from 'react-redux'
-import { toggleSignup, handleLogin, signUpForm, loginForm} from '../redux/actionCreator'
+import { toggleSignup, handleLogin, signUpForm, loginForm, unsetError} from '../redux/actionCreator'
 
 const Login = (props) => {
-    const { signup, toggleSignup, handleLogin, signUpForm, loginForm, form, error} = props
+    const { signup, toggleSignup, handleLogin, signUpForm, loginForm, form, error, unsetError} = props
     const { username, password, passwordConfirmation } = form
 
     const onSubmit = (e) => {
@@ -17,10 +17,25 @@ const Login = (props) => {
       } else {
         loginForm({username: username, password: password})
       }
-      if (error) {
-        alert(error)
-      }
+
+      // if (error) {
+      //   alert(error)
+      //   unsetError()
+      // }
+
     }
+
+    // const LoginAlert = () => {
+    //   console.log(error)
+    //   if(error) {
+    //     alert(error)
+    //   }
+    // }
+
+    // useEffect(() => {
+    //   return () => LoginAlert()
+    // }, [])
+
 
     return(
      
@@ -61,4 +76,4 @@ const Login = (props) => {
     error: state.users.error
   })
 
-  export default connect(mapStateToProps, { toggleSignup, handleLogin, signUpForm, loginForm} )(Login)
+  export default connect(mapStateToProps, { toggleSignup, handleLogin, signUpForm, loginForm, unsetError} )(Login)

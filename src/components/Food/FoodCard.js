@@ -4,14 +4,16 @@ import Card from 'react-bootstrap/Card'
 
 
 const FoodCard = (props) => {
-    const {id, name, mealId} = props
+    const {id, name, mealId, calories} = props
     // console.log(props)
     return (
       <>
           <Card>
-          <Card.Header>Food ID: {id}</Card.Header>
+          <Card.Header>{name}</Card.Header>
           <Card.Text>
-      {name}
+          Food ID: {id}
+          <br></br>
+          Calorie Count: {calories}
     </Card.Text>
        <Link to={
           { pathname: `/foods/${id}`,
