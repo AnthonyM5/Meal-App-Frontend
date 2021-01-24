@@ -28,10 +28,10 @@ render(){
     console.log(this.props)
     return(
         <>
-        <div className="card" style={{color: "red"}}>
+        <div className="card">
             <h1>{username}</h1>
             <h3 id={id}>{name}</h3>
-            <h4>Calorie Count: {calorieCount}</h4>
+            <div className="calories"> <h4>Calorie Count: {calorieCount}</h4></div>
             {/* {nutrients ? nutrients.map(ingredient => console.log(this.props.filter(ingredient.food_id))) : null} */}
             { nutrients ? nutrients.map(nutrient => 
             <p key={cuid()}> 

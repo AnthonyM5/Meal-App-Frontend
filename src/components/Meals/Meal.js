@@ -18,13 +18,10 @@ const Meal = (props) => {
           <Card.Header>ID: {id} </Card.Header>
           <Card.Title>Name: {name}</Card.Title>
           <Card.Text>
-            
-            <p>Calorie Count: {calorieCount}
-              <br></br>
-              Number of Ingredients: {ingredients.length} 
-            </p>
-            <Link to={`/meals/${id}`}>See More</Link>
+          <div className="ingredients"> Number of Ingredients: {ingredients.length} </div>
+          <div className="calories"> Calorie Count: {calorieCount}</div>
             </Card.Text>
+            <Link to={`/meals/${id}`}>See More</Link>
     </Card>
   )
 }
