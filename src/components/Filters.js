@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { handleSearchForm } from '../redux/actionCreator'
+import cuid from 'cuid'
 
 const Filters = (props) => {
     // console.log(props)
@@ -11,6 +12,7 @@ const Filters = (props) => {
           <label>
             Sort by Calories:
           <input 
+          key={cuid()}
           name="calories"
           type="checkbox"
           checked={props.calories}
