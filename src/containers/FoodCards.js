@@ -26,7 +26,7 @@ const FoodCards = (props) => {
 
     const [toggle, setToggle] = useState(false);
 
-    console.log(props)
+    // console.log(props)
 
     // setToggle({toggle: !toggle})
 
@@ -43,7 +43,11 @@ const FoodCards = (props) => {
 
 
  
-    const filteredFoods = searchedFoods.map( food => food).sort(function(a,b) {return a.calories - b.calories})
+    const filteredFoods = () => {
+
+      return props.calories ? searchedFoods.map( food => food).sort(function(a,b) {return a.calories - b.calories}) : searchedFoods
+    
+    }
       
     
     
@@ -62,18 +66,7 @@ const FoodCards = (props) => {
       <>
       <Filter />
       <button onClick={history.goBack}>Go Back!</button>
-      { props.search ? <div className="cards">
-        <button onClick={ () => setToggle(!toggle)}>Sort By</button>
-        {
-          toggle ? location.state ? filteredFoods.map(food => <FoodCard key={food.id} {...food} mealId={location.state.id}/>) : filteredFoods.map(food => <FoodCard key={food.id} {...food}/>) :
-           location.state ? searchedFoods.map(food => <FoodCard key={food.id} {...food} mealId={location.state.id}/>) : searchedFoods.map(food => <FoodCard key={food.id} {...food}/>) 
-        }
-      </div> : <div className="cards">
-        {
-          toggle ? location.state ? filteredFoods.map(food => <FoodCard key={food.id} {...food} mealId={location.state.id}/>) : filteredFoods.map(food => <FoodCard key={food.id} {...food}/>) :
-           location.state ? searchedFoods.map(food => <FoodCard key={food.id} {...food} mealId={location.state.id}/>) : searchedFoods.map(food => <FoodCard key={food.id} {...food}/>) 
-        }
-      </div> }
+      { location.state ? filteredFoods().map(food => <FoodCard key={food.id} {...food} mealId={location.state.id}/>) : filteredFoods().map(food => <FoodCard key={food.id} {...food}/>) }
       </> : <> <h1>"Not Found"</h1> <button onClick={props.unsetForms}>Search Again</button></>
     ) 
 }

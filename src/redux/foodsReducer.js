@@ -8,7 +8,9 @@ const initialState = {
     foods: [],
     filtersForm: {
       search: "",
-      filter: ""
+      filter: "",
+      calories: false
+
     },
 
     selectedFood: nullObj,
@@ -21,6 +23,7 @@ const foodsReducer = (state=initialState, action) => {
         case 'SET_SELECTED_FOOD':
             return {...state, selectedFood: action.payload }
         case 'FILTERS_FORM_CHANGE':
+          console.log(action.payload)
           return {...state, filtersForm: {
             ...state.filtersForm,
             [action.payload.name]: action.payload.value
