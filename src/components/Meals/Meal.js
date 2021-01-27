@@ -19,7 +19,7 @@ const Meal = (props) => {
           <Card.Title>Name: {name}</Card.Title>
           <Card.Text>
           <div className="ingredients"> Number of Ingredients: {ingredients.length} </div>
-          <div className="calories"> Calorie Count: {calorieCount}</div>
+          <div className="calories">Total Calorie Count: {calorieCount}</div>
             </Card.Text>
             <Link to={`/meals/${id}`}>See More</Link>
     </Card>

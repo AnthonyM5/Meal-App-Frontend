@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import cuid from 'cuid'
 
 
+
 class MealPage extends Component {
 
 componentDidMount(){
@@ -31,7 +32,7 @@ render(){
         <div className="card">
             <h1>{username}</h1>
             <h3 id={id}>{name}</h3>
-            <div className="calories"> <h4>Calorie Count: {calorieCount}</h4></div>
+            <div className="calories"> <h4>Total Calorie Count: {calorieCount}</h4></div>
             {/* {nutrients ? nutrients.map(ingredient => console.log(this.props.filter(ingredient.food_id))) : null} */}
             { nutrients ? nutrients.map(nutrient => 
             <p key={cuid()}> 
@@ -47,6 +48,7 @@ render(){
             }}>Add Ingredients</Link>
             <button onClick={ history.goBack }>Go back!</button>
         </div>
+        
         </>
         )
     }

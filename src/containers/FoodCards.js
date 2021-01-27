@@ -1,4 +1,4 @@
-import { React, useEffect, useState} from 'react'
+import { React, useEffect} from 'react'
 // import Card from 'react-bootstrap/Card'
 import { connect } from 'react-redux'
 // import { compose } from 'redux'
@@ -24,7 +24,8 @@ const FoodCards = (props) => {
     // }
 
 
-    const [toggle, setToggle] = useState(false);
+    // const [toggle, setToggle] = useState(false);
+    // moved the filter/toggle state to redux
 
     // console.log(props)
 
