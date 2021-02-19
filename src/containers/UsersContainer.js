@@ -22,9 +22,7 @@ class UserContainer extends Component {
         return (
             <>
             <div className="component">
-            <h1>{username}</h1>
-            <h4>Current Meal Count: {meals.meals.length}</h4>
-            <UserInput user={this.props.users} createMeal={this.props.createMeal}/>
+            <UserInput user={this.props.users} createMeal={this.props.createMeal} mealCount={meals.meals.length} username={username}/>
             </div>
             </>
         )

@@ -22,7 +22,7 @@ class MealsContainer extends Component {
     render() {
       const { history } = this.props
       return (
-        this.props.user ? <div className="App">
+        this.props.user ? <div className="component">
           <Meals/>
           {/* <UserInput user={this.props.users} createMeal={this.props.createMeal} addMeal={this.props.addMeal}/> */}
           <br></br>
