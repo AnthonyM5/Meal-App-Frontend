@@ -31,16 +31,24 @@ class UserInput extends Component {
           user: this.props.user,
           imgUrl: this.state.url
         })
-        this.setState({
-          redirect: true
-        });
-        console.log(this.state)
+        .then( results => {
+          if ( results ) {
+            alert(results.errors)
+          } else {
+            this.setState({
+              redirect: true
+            });
+          }
+        } 
+        )
+       
+        // console.log(this.state)
         // return <Redirect to="/meals"/>
       }
 
       renderRedirect = () => {
         if (this.state.redirect) {
-          console.log("redirect")
+          // console.log("redirect")
           return <Redirect to={{ pathname: "/meals" }}/>
         }
       }
@@ -66,9 +74,10 @@ class UserInput extends Component {
         
         return (
           
-          <div>
+          <div className="card">
             {this.renderRedirect()}
             <form onSubmit={(event) => this.handleOnSubmit(event)}> 
+            <h3>Create a Meal:</h3>
             <label> Meal Name: 
             <input 
               type='text'

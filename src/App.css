@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   align-items: center;
+
+  
 }
 
 .App-logo {
@@ -15,7 +17,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #323c4e;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -49,12 +51,28 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  
 }
+
+.component {
+  margin: 10px;
+  border-radius: 10px;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* background-image: url('logo.svg') */
+
+}
+
 
 .card {
   margin: 10px;
   border-radius: 10px;
+  min-height: 50vh;
 }
+
+
 
 .calories {
   color: red;

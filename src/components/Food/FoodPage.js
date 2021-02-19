@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router';
 import { setSelectedFood, unsetFood, addToMeal} from '../../redux/actionCreator'
-import ListGroup from 'react-bootstrap/ListGroup'
-import cuid from 'cuid'
-import Spinner from 'react-bootstrap/Spinner'
+// import ListGroup from 'react-bootstrap/ListGroup'
+// import cuid from 'cuid'
+// import Spinner from 'react-bootstrap/Spinner'
 import Table  from '../../components/Tables.js'
 
 class FoodPage extends Component {

@@ -9,11 +9,11 @@ import { createMeal, setMeals } from '../redux/actionCreator'
 
 class MealsContainer extends Component {
 
-  componentDidMount() { 
-    console.log(this.props)
-    this.props.setMeals()
+  // componentDidMount() { 
+  //   // console.log(this.props)
+  //   // this.props.setMeals()
     
-  }
+  // }
 
   // componentWillUnmount() {
   //   this.props.unsetMeals()
@@ -22,7 +22,7 @@ class MealsContainer extends Component {
     render() {
       const { history } = this.props
       return (
-        this.props.user ? <div>
+        this.props.user ? <div className="App">
           <Meals/>
           {/* <UserInput user={this.props.users} createMeal={this.props.createMeal} addMeal={this.props.addMeal}/> */}
           <br></br>

@@ -128,26 +128,30 @@ export const signUpForm = (data) => {
 }
 
 export const createMeal = (data) => {
-  console.log(data)
-  return dispatch => {
-    fetch(API + "/meals", {
+  return dispatch => (
+     fetch(API + "/meals", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     })
+
     .then(res => res.json())
     .then(res => {
-      console.log(res) 
+      // console.log(res.errors) 
       // Check to see if data is called properly in payload
-      dispatch({
-      type: "ADD_MEAL",
-      payload: { meal: res.name, user: res.userId}
-    })}
-    )
-    
-  }
+      if (!res.errors) {
+        // dispatch({
+        //   type: "ADD_MEAL",
+        //   payload: { meal: res.name, user: res.userId}
+        // })
+      } else {
+        return res
+      }
+    })
+  )
+
 }
 
 

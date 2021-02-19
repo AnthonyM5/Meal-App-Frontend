@@ -6,7 +6,7 @@ import Meal from '../Meals/Meal'
 
 
 const Meals = (props) => {
-    console.log(props)
+    // console.log(props)
     // const { history } = props
     return(
       <>
