@@ -54,7 +54,7 @@ handleClick = (e) => {
 
 render(){
     
-    const { name, calories, history, nutrientHash, location} = this.props 
+    const { name, calories, history, location} = this.props 
 
     // console.log(this.props)
     return(

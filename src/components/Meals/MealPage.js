@@ -26,7 +26,7 @@ render(){
     
     const { name, history, nutrients, username, calorieCount} = this.props
     const id = this.props.match.params.id
-    console.log(this.props)
+    // console.log(this.props)
     return(
         <>
         <div className="card">
@@ -42,10 +42,12 @@ render(){
                 pathname: '/foods/' + nutrient.id,
                 state: {id}
             }}>{nutrient.name}</Link></p> ) : null }
+
             <Link to={{ 
                 pathname: `/foods`,
                 state: {id}
             }}>Add Ingredients</Link>
+            
             <button onClick={ history.goBack }>Go back!</button>
         </div>
         

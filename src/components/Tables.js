@@ -50,7 +50,7 @@ const BasicTable = (props) => {
         </TableHead>
         <TableBody>
           {nutrientHash ?  nutrientHash.map((nutrient) => (
-            <TableRow key={nutrient.nutrientName}>
+            <TableRow key={nutrient.nutrientNumber}>
               <TableCell component="th" scope="row">
                 {nutrient.nutrientName}
               </TableCell>

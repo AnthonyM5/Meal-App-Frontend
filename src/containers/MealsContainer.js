@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import UserInput from '../components/UserInput'
 // import FileReader from '../components/FileReader'
-import Meals from '../components/Meals/Meals';
+import Meal from '../components/Meals/Meal'
 import { createMeal, setMeals } from '../redux/actionCreator'
  
 
@@ -20,10 +20,11 @@ class MealsContainer extends Component {
   // }
     
     render() {
+      console.log(this.props)
       const { history } = this.props
       return (
         this.props.user ? <div className="component">
-          <Meals/>
+          {this.props.meals.meals.map(meal => <Meal key={meal.id} {...meal}/> )}
           {/* <UserInput user={this.props.users} createMeal={this.props.createMeal} addMeal={this.props.addMeal}/> */}
           <br></br>
           <button onClick={history.goBack}>Go Back!</button>
