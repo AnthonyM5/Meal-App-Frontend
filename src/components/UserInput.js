@@ -49,6 +49,7 @@ class UserInput extends Component {
       renderRedirect = () => {
         if (this.state.redirect) {
           // console.log("redirect")
+          this.props.setMeals()
           return <Redirect to={{ pathname: "/meals" }}/>
         }
       }
