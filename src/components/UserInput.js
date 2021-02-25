@@ -74,7 +74,7 @@ class UserInput extends Component {
         
         return (
           
-          <div className="card1">
+          <div className="card">
             {this.renderRedirect()}
             <form onSubmit={(event) => this.handleOnSubmit(event)}> 
             <h1>Welcome {this.props.username}!</h1>
