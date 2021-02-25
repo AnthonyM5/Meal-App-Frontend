@@ -1,4 +1,4 @@
-import {React, useEffect} from 'react'
+import { React } from 'react'
 import { connect } from 'react-redux'
 import { toggleSignup, handleLogin, signUpForm, loginForm, unsetError} from '../redux/actionCreator'
 
@@ -9,7 +9,7 @@ const Login = (props) => {
     const onSubmit = (e) => {
       e.preventDefault()
       if (signup){
-        if (password == passwordConfirmation){
+        if (password === passwordConfirmation){
           signUpForm({username: username, password: password})
         } else {
           alert("Those passwords don't match!")

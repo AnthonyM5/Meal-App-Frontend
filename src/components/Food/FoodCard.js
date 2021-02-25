@@ -13,7 +13,7 @@ const FoodCard = (props) => {
           <Card.Text>
           Food ID: {id}
           <br></br>
-          <div className="calories">Calorie Count: {calories}</div>
+          <p className="calories">Calorie Count: {calories}</p>
     </Card.Text>
        <Link to={
           { pathname: `/foods/${id}`,

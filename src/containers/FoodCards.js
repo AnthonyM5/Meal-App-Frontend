@@ -64,11 +64,12 @@ const FoodCards = (props) => {
         
     return (
       searchedFoods.length > 0 ? 
-      <>
-      <Filter />
+      <div className="component">
+      <div className="card"><Filter/>
       <button onClick={history.goBack}>Go Back!</button>
+      </div>
       { location.state ? filteredFoods().map(food => <FoodCard key={food.id} {...food} mealId={location.state.id}/>) : filteredFoods().map(food => <FoodCard key={food.id} {...food}/>) }
-      </> : <> <h1>"Not Found"</h1> <button onClick={props.unsetForms}>Search Again</button></>
+      </div> : <> <h1>"Not Found"</h1> <button onClick={props.unsetForms}>Search Again</button></>
     ) 
 }
 
