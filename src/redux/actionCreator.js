@@ -1,8 +1,9 @@
-const API = "http://localhost:3001"
+import API_ROOT from '../apiRoot.js'
+
 
 export const setFoods = () => {
   return dispatch => {
-    fetch(API + "/foods")
+    fetch(API_ROOT + "/foods")
     .then(res => res.json())
     .then(foods => dispatch({
       type: "SET_FOODS",
@@ -15,7 +16,7 @@ export const setFoods = () => {
 
 export const setMeals = () => {
   return dispatch => {
-    fetch(API + "/meals", {
+    fetch(API_ROOT + "/meals", {
       headers: {
         'Authorization': localStorage.token,
       },
@@ -31,7 +32,7 @@ export const setMeals = () => {
 
 export const setSelectedFood = (id) => {
   return dispatch => {
-    fetch(API + "/foods/" + id)
+    fetch(API_ROOT + "/foods/" + id)
     .then(res => res.json())
     .then(food => dispatch({
       type: "SET_SELECTED_FOOD",
@@ -42,7 +43,7 @@ export const setSelectedFood = (id) => {
 
 export const setSelectedMeal = (id) => {
   return dispatch => {
-    fetch(API + "/meals/" + id)
+    fetch(API_ROOT + "/meals/" + id)
     .then(res => res.json())
     .then(meal => dispatch({
       type: "SET_SELECTED_MEAL",
@@ -53,7 +54,7 @@ export const setSelectedMeal = (id) => {
 
 export const setSelectedIngredients = (id) => {
   return dispatch => {
-    fetch(API + "/meals/" + id + "/ingredients")
+    fetch(API_ROOT + "/meals/" + id + "/ingredients")
     .then(res => res.json())
     .then(ingredients => dispatch({
       type: "SET_SELECTED_INGREDIENTS",
@@ -65,7 +66,7 @@ export const setSelectedIngredients = (id) => {
 export const addToMeal = (data) => {
     console.log(data)
     return dispatch => {
-      fetch(API + "/meals/" + data.mealId + "/ingredients", {
+      fetch(API_ROOT + "/meals/" + data.mealId + "/ingredients", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -74,7 +75,7 @@ export const addToMeal = (data) => {
       })
       .then(res => console.log(res, data))
       } 
-    //   fetch(API + "/meals/" + data.mealId + "/ingredients", {
+    //   fetch(API_ROOT + "/meals/" + data.mealId + "/ingredients", {
     //     method: "POST",
     //     headers: {
     //       'Content-Type': 'application/json',
@@ -108,7 +109,7 @@ export const handleSearchForm = (e) => {
 
 export const signUpForm = (data) => {
   return dispatch => {
-    fetch(API + "/users", {
+    fetch(API_ROOT + "/users", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -129,7 +130,7 @@ export const signUpForm = (data) => {
 
 export const createMeal = (data) => {
   return dispatch => (
-     fetch(API + "/meals", {
+     fetch(API_ROOT + "/meals", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -157,7 +158,8 @@ export const createMeal = (data) => {
 
 export const loginForm = (data) => {
   return dispatch => {
-    fetch(API + "/login", {
+    console.log(API_ROOT + "/foods")
+    fetch(API_ROOT + "/login", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -173,6 +175,7 @@ export const loginForm = (data) => {
           payload: {error: res.error}
         })
       } else  
+      console.log(res)
       dispatch({
         
         type: "SET_USER",
@@ -187,7 +190,7 @@ export const loginForm = (data) => {
 export const autoLogin = () => {
   
   return dispatch => {
-    fetch(API + "/autologin", {
+    fetch(API_ROOT + "/autologin", {
       method: 'POST', 
       headers: {
         'Authorization': localStorage.token,

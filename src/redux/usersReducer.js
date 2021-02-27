@@ -25,7 +25,7 @@ const initialState = {
       case "WRONG_USER_OR_PASSWORD":
         return {...state, ...action.payload}
       case "SET_USER":
-        // console.log(action.payload) - Checking to see if User data is passed properly
+        console.log(action.payload) 
         return {...state, ...action.payload.user}
       case "LOGOUT":
         console.log("logged out")
