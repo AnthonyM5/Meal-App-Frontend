@@ -20,7 +20,7 @@ class MealsContainer extends Component {
   // }
     
     render() {
-      console.log(this.props)
+      // console.log(this.props)
       const { history } = this.props
       return (
         this.props.user ? <div className="component">

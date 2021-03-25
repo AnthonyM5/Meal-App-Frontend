@@ -42,7 +42,7 @@ const FoodCards = (props) => {
     })
     const { history, location } = props
 
-
+    // console.log(props.foods.sort(function(a,b) {return a.water - b.water}))
  
     const filteredFoods = () => {
 

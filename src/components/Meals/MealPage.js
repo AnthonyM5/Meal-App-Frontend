@@ -26,9 +26,11 @@ render(){
     
     const { name, history, nutrients, username, calorieCount} = this.props
     const id = this.props.match.params.id
-    // console.log(this.props)
+    
     return(
         <>
+        {nutrients ? nutrients.forEach(nutrient => console.log(nutrient)) : null}
+        {nutrients ? nutrients.forEach(nutrient => console.log(Object.values(nutrient).reduce((t, water) => t + water, 0))) : null}
         <div className="card">
             <h1>{username}</h1>
             <h3 id={id}>{name}</h3>

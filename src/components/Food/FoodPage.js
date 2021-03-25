@@ -67,6 +67,7 @@ render(){
         { location.state.mealId ? <button onClick={this.handleClick}>Add To Meal</button> : null }
         <button onClick={ history.goBack }>Go back!</button>
             {this.renderRedirect()}
+            
             {/* <h4>Nutrients: </h4> */}
             <Table />
             {/* <ListGroup as="ul" variant="flush">

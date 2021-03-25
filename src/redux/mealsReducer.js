@@ -20,7 +20,7 @@ const manageMeals = (state=initialState, action) => {
         let meals = action.payload
         return {...state, meals}
       case 'SET_SELECTED_MEAL':
-          console.log(action.payload)
+          // console.log(action.payload)
           return {...state, selectedMeal: action.payload }
       case 'SET_SELECTED_INGREDIENTS':
         return {...state, ingredients: {...state.nutrients, nutrients: action.payload}}

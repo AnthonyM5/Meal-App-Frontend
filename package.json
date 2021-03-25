@@ -4,12 +4,14 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.3",
+    "@tensorflow-models/coco-ssd": "^2.1.0",
     "@tensorflow-models/mobilenet": "^2.1.0",
     "@tensorflow/tfjs": "^3.2.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.3",
     "bootstrap": "^4.6.0",
+    "coco": "^0.9.1",
     "cuid": "^2.1.8",
     "react": "^17.0.1",
     "react-bootstrap-validation": "^0.1.11",
@@ -21,6 +23,7 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "seedrandom": "^2.4.4",
+    "ssd": "^1.0.2",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

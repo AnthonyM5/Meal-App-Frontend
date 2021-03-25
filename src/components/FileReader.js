@@ -1,7 +1,7 @@
 import ReactFileReader from 'react-file-reader';
 import React, { Component } from 'react';
-import Prediction from './Prediction'
-// import { connect } from 'react-redux'
+import Prediction from './Prediction';
+import Classifier from './Classifier';
 
 class FileReader extends Component {
   state = {
@@ -22,6 +22,9 @@ class FileReader extends Component {
     prediction.NewPrediction()
     .then(predictions =>  this.setState({
       prediction: predictions}))
+
+    let classify = new Classifier()
+    classify.NewPrediction()
   }
 
 
@@ -29,7 +32,7 @@ class FileReader extends Component {
     // const img = document.getElementById('img').src
     // const toggle = img ?? 
     const { history } = this.props
-    console.log(this.props)
+    // console.log(this.props)
     return(
       <div className="files">
         <h1>Predictions</h1>

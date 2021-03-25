@@ -25,13 +25,13 @@ const initialState = {
       case "WRONG_USER_OR_PASSWORD":
         return {...state, ...action.payload}
       case "SET_USER":
-        console.log(action.payload) 
+        // console.log(action.payload) 
         return {...state, ...action.payload.user}
       case "LOGOUT":
-        console.log("logged out")
+        // console.log("logged out")
         return {...state, username: "", id: ""}
       case "UNSET_ERROR":
-        console.log("start")
+        // console.log("start")
         return {...state, error: null}
       default:
         return {...state}
