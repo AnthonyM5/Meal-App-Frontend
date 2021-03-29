@@ -97,3 +97,19 @@ p.ingredients {
 .h1 {
   position: absolute;
 }
+
+.files img {
+  max-width: 75vh;
+  max-height: 75vh;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  /* vertical-align: middle; */
+}
+
+.dropbox {
+  min-height: 100vh;
+  min-width: 100vh;
+  margin: 20px auto;
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+}
