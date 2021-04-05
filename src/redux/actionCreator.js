@@ -87,6 +87,23 @@ export const addToMeal = (data) => {
     // }
 }
 
+
+
+export const deleteFromMeal = (data) => {
+  console.log(data)
+  return dispatch => {
+    // fetch(API_ROOT + data.pathname + "/ingredients", + data.ingredientId, {
+    //   method: "POST",
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    // .then(res => console.log(res, data))
+    }
+} 
+
+
 export const handleLogin = (e) => ({type: "LOGIN_FORM", payload: {name: e.target.name, value: e.target.value}})
 export const toggleSignup = () => ({type: "TOGGLE_SIGNUP"})
 

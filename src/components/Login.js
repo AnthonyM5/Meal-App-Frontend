@@ -40,6 +40,8 @@ const Login = (props) => {
     return(
      
       <>
+        
+        <a href="https://github.com/AnthonyM5/Meal-App-Frontend">Read Me</a>
         <h3>{signup ? "Sign up!" : "Login!"} </h3>
         <form onSubmit={onSubmit}> 
           <label>

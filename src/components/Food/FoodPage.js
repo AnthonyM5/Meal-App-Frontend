@@ -18,6 +18,7 @@ class FoodPage extends Component {
 componentDidMount(){
     const id = this.props.match.params.id
     this.props.setSelectedFood(id)
+    console.log(this.props)
 }
 
 componentWillUnmount(){

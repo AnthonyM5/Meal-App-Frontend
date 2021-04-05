@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setSelectedMeal, setSelectedIngredients, unsetMeal } from '../../redux/actionCreator'
+import { setSelectedMeal, setSelectedIngredients, unsetMeal, deleteFromMeal} from '../../redux/actionCreator'
 // import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import cuid from 'cuid'
@@ -22,15 +22,29 @@ componentWillUnmount(){
   }
 
 
+  handleClick = (e) => {
+    e.preventDefault()
+    
+    this.setState({
+        redirect: true
+    })   
+    const mealId = parseInt(this.props.match.params.id)
+    const id = this.props.id
+    console.log(this.props)
+    this.props.deleteFromMeal({id: id, mealId: mealId})
+
+}
+
 render(){
     
-    const { name, history, nutrients, username, calorieCount} = this.props
+    const { name, history, nutrients, username, calorieCount, ingredients} = this.props
     const id = this.props.match.params.id
+    console.log(this.props)
     
     return(
         <>
-        {nutrients ? nutrients.forEach(nutrient => console.log(nutrient)) : null}
-        {nutrients ? nutrients.forEach(nutrient => console.log(Object.values(nutrient).reduce((t, water) => t + water, 0))) : null}
+        {/* {nutrients ? nutrients.forEach(nutrient => console.log(nutrient)) : null} */}
+        {/* {nutrients ? nutrients.forEach(nutrient => console.log(Object.values(nutrient).reduce((t, water) => t + water, 0))) : null} */}
         <div className="card">
             <h1>{username}</h1>
             <h3 id={id}>{name}</h3>
@@ -42,9 +56,10 @@ render(){
             </br>
             <Link to={{ 
                 pathname: '/foods/' + nutrient.id,
-                state: {id}
-            }}>{nutrient.name}</Link></p> ) : null }
-
+                state: ingredients
+            }}>{nutrient.name}</Link> <button onClick={this.handleClick}>Delete From Meal</button> </p>
+            ) : null }
+             
             <Link to={{ 
                 pathname: `/foods`,
                 state: {id}
@@ -70,4 +85,4 @@ const mapStateToProps = (state) => ({
 
 })
 
-export default connect( mapStateToProps, { setSelectedMeal, unsetMeal, setSelectedIngredients } )(MealPage)
+export default connect( mapStateToProps, { setSelectedMeal, unsetMeal, setSelectedIngredients, deleteFromMeal} )(MealPage)
