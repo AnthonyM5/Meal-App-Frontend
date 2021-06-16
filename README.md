@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This React application will allow you to build meals using nutrient profiles from the Food Data Central API and render an aggregated nutrient profile of your meal.  It is an attempt to dive into your meals by compiling nutritional breakdown of components. Individual ingredients represnet 1 of 7,000 database records with in-depth nutrient profiles.   The combined meal data can help in unique cases like calorie counting tracking nutrient intake, etc.  The database can be searched by name, and results sorted by nutrient values (calories only for now). 
+This React application will allow you to build meals using nutrient profiles from the Food Data Central API and render an aggregated nutrient profile of your meal.  It is an attempt to dive into your meals by compiling nutritional breakdown of components. Individual ingredients represent 1 of 7,000 database records with in-depth nutrient profiles.   The combined meal data can help in unique cases like calorie counting tracking nutrient intake, etc.  The database can be searched by name, and results sorted by nutrient values (calories only for now). 
 
 <a href='https://github.com/antimonysayz/Meal-App-Backend'>More Information on Backend Rails API</a>
 
